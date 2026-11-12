@@ -1,13 +1,8 @@
-import MainLayout from "~/layouts/MainLayout/MainLayout";
+import { router } from "./router";
+import { RouterProvider } from "react-router/dom";
 
 const App = () => {
-  return (
-    <MainLayout>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
-      voluptate ipsa dolorum, itaque minus neque deleniti porro earum numquam
-      reiciendis.
-    </MainLayout>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;

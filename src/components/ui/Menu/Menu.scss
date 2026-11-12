@@ -19,7 +19,16 @@
     }
   }
 
-  &__item {
+  &__link {
     font-size: rem(24);
+		transition-duration: var(--transition-duration);
+
+		@include hover(false) {
+			opacity: 0.6;
+		}
+
+		&:active {
+			opacity: 0.3;
+		}
   }
 }

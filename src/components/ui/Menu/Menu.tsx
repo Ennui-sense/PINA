@@ -13,7 +13,9 @@ const Menu = ({ className, direction = "column" }: MenuProps) => {
       <ul className="menu__list">
         {MENU.map(({ label, href }) => (
           <li className="menu__item" key={href}>
-            {label}
+            <a href={href} className="menu__link">
+              {label}
+            </a>
           </li>
         ))}
       </ul>
