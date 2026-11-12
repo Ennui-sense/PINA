@@ -1,0 +1,25 @@
+@use "~/styles/helpers" as *;
+
+.menu {
+  &__list {
+    display: flex;
+  }
+
+  &--row {
+    .menu__list {
+      column-gap: rem(80);
+    }
+  }
+
+  &--column {
+    .menu__list {
+      flex-direction: column;
+      row-gap: rem(12);
+      text-align: end;
+    }
+  }
+
+  &__item {
+    font-size: rem(24);
+  }
+}

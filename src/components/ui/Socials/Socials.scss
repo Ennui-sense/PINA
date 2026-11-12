@@ -1,0 +1,14 @@
+@use "~/styles/helpers" as *;
+
+.socials {
+	display: flex;
+	column-gap: rem(20);
+
+	&__link {
+		@include square(rem(40));
+
+		@include hover {
+			opacity: 0.6;
+		}
+	}
+}

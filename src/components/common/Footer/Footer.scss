@@ -1,0 +1,76 @@
+@use "~/styles/helpers" as *;
+
+.footer {
+  background-color: var(--color-dark);
+  color: var(--color-accent);
+  border-radius: var(--border-radius-x-large) var(--border-radius-x-large) 0 0;
+  padding-block: rem(80) rem(40);
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: rem(80);
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+    }
+
+    &::after {
+			background: url("/src/assets/images/bottles.svg") center / cover no-repeat;
+			width: rem(370);
+			height: rem(250);
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		
+    &::before {
+			@include square(rem(180));
+
+			background: url("/src/assets/images/glass.svg") center / cover no-repeat;
+			right: rem(40);			
+    }
+  }
+
+  &__bottom {
+    border-top: var(--border);
+    padding-top: rem(20);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__text {
+    font-weight: 700;
+    font-size: rem(16);
+    text-transform: uppercase;
+  }
+
+  &__info {
+    display: flex;
+    column-gap: rem(40);
+    align-items: center;
+  }
+
+  &__socials {
+    position: relative;
+
+    &::after {
+      content: "";
+      width: rem(1);
+      height: 50%;
+      background-color: var(--color-accent-dark);
+      position: absolute;
+      right: rem(-20);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__copyright {
+    font-weight: 400;
+    font-size: rem(16);
+  }
+}

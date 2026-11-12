@@ -1,0 +1,27 @@
+@use "~/styles/helpers" as *;
+
+.logo {
+  display: flex;
+
+  &--column {
+    flex-direction: column;
+    row-gap: rem(24);
+  }
+
+  &--row {
+    align-items: center;
+    column-gap: rem(32);
+  }
+
+  &__text {
+    font-size: rem(32);
+    line-height: 1.25;
+    max-width: rem(400);
+
+    &-accent {
+      font-weight: 700;
+      text-decoration: underline;
+      font-style: italic;
+    }
+  }
+}

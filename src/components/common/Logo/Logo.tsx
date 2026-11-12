@@ -1,0 +1,32 @@
+import clsx from "clsx";
+import "./Logo.scss";
+import LogoDarkImageSrc from "~/assets/images/logo-dark.svg";
+import LogoLightImageSrc from "~/assets/images/logo-light.svg";
+
+interface LogoProps {
+  direction?: "row" | "column";
+	theme?: "light" | "dark";
+}
+
+const Logo = ({ direction = "row", theme = "dark"}: LogoProps) => {
+  const isDarkTheme = theme === "dark"
+
+	return (
+    <a href="/" className={clsx("logo", `logo--${direction}`)}>
+      <img
+        src={isDarkTheme ? LogoDarkImageSrc : LogoLightImageSrc}
+        alt="Логотип PINA"
+        width={254}
+        height={110}
+        className="logo__image"
+      />
+
+      <p className="logo__text">
+        Когда бар становится частью{" "}
+        <span className="logo__text-accent">события</span>
+      </p>
+    </a>
+  );
+};
+
+export default Logo;

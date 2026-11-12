@@ -4,9 +4,10 @@
   --color-light: #fffcf8;
 
   --color-dark: #7b0323;
-
+	
   --color-accent: #fdfbd4;
   --color-accent-alt: #e9edd9;
+  --color-accent-dark: #d9c2c7;
 
   --color-error: #ef4444;
   --color-error-light: #fee2e2;
@@ -22,7 +23,7 @@
 
 	--button-height: #{rem(60)};
 
-	--border: #{rem(1)} solid #d9c2c7;;
+	--border: #{rem(1)} solid var(--color-accent-dark);
 
   --border-radius-x-large: #{rem(40)};
   --border-radius-large: #{rem(32)};
