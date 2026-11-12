@@ -1,0 +1,35 @@
+@use "./../helpers" as *;
+
+:root {
+  --color-light: #fffcf8;
+
+  --color-dark: #7b0323;
+
+  --color-accent: #fdfbd4;
+  --color-accent-alt: #e9edd9;
+
+  --color-error: #ef4444;
+  --color-error-light: #fee2e2;
+
+	--color-success: #d1fae5;
+	--color-success-dark: #065f46;
+
+  --font-family-base: "Montserrat", sans-serif;
+  --font-family-accent: "UraBumBumSP", sans-serif;
+
+  --container-width: #{rem(1600)};
+  --container-padding-x: #{rem(20)};
+
+	--button-height: #{rem(60)};
+
+	--border: #{rem(1)} solid #d9c2c7;;
+
+  --border-radius-x-large: #{rem(40)};
+  --border-radius-large: #{rem(32)};
+  --border-radius: #{rem(20)};
+  --border-radius-small: #{rem(12)};
+
+  --box-shadow: 0 0 #{rem(29)} 0 rgba(123, 3, 35, 0.12);
+
+  --transition-duration: 0.25s;
+}
