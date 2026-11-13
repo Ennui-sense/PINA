@@ -1,0 +1,56 @@
+@use "~/styles/helpers" as *;
+
+.section {
+  padding-block: rem(80);
+	border-radius: var(--border-radius-x-large);
+	position: relative;
+	margin-bottom: rem(40);
+
+  &__inner {
+    display: flex;
+  }
+
+  &--row {
+    .section__inner {
+      justify-content: space-between;
+    }
+  }
+
+  &--column {
+    .section__inner {
+      flex-direction: column;
+      row-gap: rem(40);
+    }
+  }
+
+  &--red {
+    background-color: var(--color-dark);
+    color: var(--color-accent);
+  }
+
+  &--green {
+    background-color: var(--color-accent-alt);
+  }
+
+  &--yellow {
+    background-color: var(--color-accent);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+	&__title {
+		margin-bottom: rem(20);
+	}
+
+  &__slogan {
+    font-family: var(--font-family-accent);
+    font-size: rem(64);
+    text-transform: uppercase;
+		max-width: rem(540);
+		line-height: 1.1;
+  }
+}

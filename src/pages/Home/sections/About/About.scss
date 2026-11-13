@@ -1,0 +1,63 @@
+@use "~/styles/helpers" as *;
+
+.about {
+  &__text {
+    max-width: rem(650);
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: calc(100vw / 2.5);
+    object-fit: cover;
+  }
+
+  &__decoration {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+
+    &::before,
+    &::after {
+      @include square(rem(120));
+
+      content: "";
+      background-color: var(--color-light);
+      border-radius: 50%;
+    }
+
+    &--1,
+    &--2,
+    &--3 {
+      top: 0;
+      height: 100%;
+			z-index: 100;
+
+      &::before {
+        transform: translateY(-50%);
+      }
+
+      &::after {
+        transform: translateY(50%);
+      }
+    }
+
+    &--1 {
+      left: 0;
+      transform: translateX(-50%);
+    }
+
+    &--2 {
+      left: 59vw;
+      transform: translateX(-50%);
+    }
+
+    &--3 {
+      right: 0;
+      transform: translateX(50%);
+    }
+  }
+}

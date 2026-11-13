@@ -3,12 +3,13 @@
 .hero {
   height: 100vh;
   position: relative;
+	margin-bottom: rem(60);
 
   &::after {
     content: "";
     background: url("/src/assets/images/man.svg") center / cover no-repeat;
-    height: 100%;
-    width: rem(1000);
+    height: 98%;
+    width: 60%;
     position: absolute;
     left: 0;
 		bottom: 0;
