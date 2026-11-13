@@ -1,4 +1,4 @@
-import type { Case, MenuItem, SocialsItem } from "./types";
+import type { ApproachItem, Case, MenuItem, SocialsItem } from "./types";
 
 import VkIcon from "~/assets/icons/vk.svg?react";
 import TelegramIcon from "~/assets/icons/telegram.svg?react";
@@ -60,5 +60,32 @@ export const CASES: Case[] = [
     date: "Август 2026",
     title: "Коктейли для гостей",
     description: "Напитки готовятся у стойки прямо во время события",
+  },
+];
+
+export const APPROACH_ITEMS: ApproachItem[] = [
+  {
+    id: 1,
+    title: "Обсуждение мероприятия",
+    description:
+      "Уточняем город, формат, количество гостей и ваши пожелания. Работаем в Перми и готовы к выезду.",
+  },
+  {
+    id: 2,
+    title: "Разработка коктельной карты",
+    description:
+      "Подбираем меню под ваш вкус: добавляем любимую классику, авторские или безалкогольные варианты.",
+  },
+  {
+    id: 3,
+    title: "Согласовываем площадку",
+    description:
+      "Обсуждаем место, подбираем оборудование и заранее согласуем, где именно встанет бар.",
+  },
+  {
+    id: 4,
+    title: "Формируем смету",
+    description:
+      "Рассчитываем стоимость исходя из числа гостей, времени работы и выбранного меню.",
   },
 ];

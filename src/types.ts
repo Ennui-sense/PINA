@@ -18,3 +18,9 @@ export type Case = {
 	title: string;
 	description: string;
 }
+
+export type ApproachItem = {
+	id: number;
+	title: string;
+	description: string;
+}
