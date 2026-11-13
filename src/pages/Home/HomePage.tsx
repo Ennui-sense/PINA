@@ -1,11 +1,10 @@
 import MainLayout from "~/layouts/MainLayout/MainLayout";
+import Hero from "./sections/Hero/Hero";
 
 const HomePage = () => {
   return (
     <MainLayout>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus
-      officia nulla, optio dolorem mollitia aliquam numquam ipsam cum beatae
-      dolore?
+      <Hero />
     </MainLayout>
   );
 };

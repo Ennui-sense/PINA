@@ -1,9 +1,21 @@
-import "./Hero.scss"
+import "./Hero.scss";
+
+import Logo from "~/components/common/Logo/Logo";
+
+import Link from "~/components/ui/Link/Link";
 
 const Hero = () => {
-	return (
-		<div>Hero</div>
-	)
-}
+  return (
+    <section className="hero">
+      <div className="hero__inner container">
+        <Logo className="hero__logo"/>
 
-export default Hero
+        <Link className="hero__link" withArrow href="/">
+          Заказать
+        </Link>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;

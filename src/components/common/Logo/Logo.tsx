@@ -5,14 +5,15 @@ import LogoLightImageSrc from "~/assets/images/logo-light.svg";
 
 interface LogoProps {
   direction?: "row" | "column";
-	theme?: "light" | "dark";
+  theme?: "light" | "dark";
+  className?: string;
 }
 
-const Logo = ({ direction = "row", theme = "dark"}: LogoProps) => {
-  const isDarkTheme = theme === "dark"
+const Logo = ({ direction = "row", theme = "dark", className }: LogoProps) => {
+  const isDarkTheme = theme === "dark";
 
-	return (
-    <a href="/" className={clsx("logo", `logo--${direction}`)}>
+  return (
+    <a href="/" className={clsx("logo", `logo--${direction}`, className)}>
       <img
         src={isDarkTheme ? LogoDarkImageSrc : LogoLightImageSrc}
         alt="Логотип PINA"

@@ -1,5 +1,8 @@
-@use "~/styles/helpers"as *;
+@use "~/styles/helpers" as *;
 
 .header {
-	margin-top: rem(100);
+  margin-top: rem(100);
+	position: absolute;
+	right: 0;
+	width: 100%;
 }
