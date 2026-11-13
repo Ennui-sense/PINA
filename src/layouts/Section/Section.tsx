@@ -1,6 +1,10 @@
-import type { ReactNode } from "react";
 import "./Section.scss";
+
+import type { ReactNode } from "react";
+
 import clsx from "clsx";
+
+import Link from "~/components/ui/Link/Link";
 
 interface SectionProps {
   variant?: "default" | "red" | "green" | "yellow";
@@ -10,6 +14,8 @@ interface SectionProps {
   slogan: string;
   description?: string;
   sectionClassName: string;
+	isCenterPosition?: boolean;
+	withButton?: boolean;
 }
 
 const Section = ({
@@ -20,6 +26,8 @@ const Section = ({
   slogan,
   description,
   sectionClassName,
+	isCenterPosition = false,
+	withButton = false
 }: SectionProps) => {
   const hasVariant = variant !== "default";
 
@@ -29,6 +37,7 @@ const Section = ({
         "section",
         hasVariant && `section--${variant}`,
         `section--${direction}`,
+				isCenterPosition && "section--center"
       )}
     >
       <div className="section__inner container">
@@ -39,6 +48,7 @@ const Section = ({
           </div>
 
           {description && <p className="section__description">{description}</p>}
+          {withButton && <Link className="section__link" href="/">Заказать</Link>}
         </header>
 
         <div className={clsx("section__body", sectionClassName)}>

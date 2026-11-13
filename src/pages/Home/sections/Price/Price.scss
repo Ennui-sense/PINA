@@ -1,0 +1,41 @@
+@use "~/styles/helpers" as *;
+
+.price {
+  &__text {
+    font-weight: 700;
+    font-size: rem(28);
+  }
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: rem(40);
+	}
+
+	&__item {
+		font-size: rem(24);
+		padding-block: rem(32);
+		display: flex;
+		align-items: center;
+		column-gap: rem(32);
+		position: relative;
+
+		&::before {
+			@include square(rem(16));
+
+			content: "";
+			background-color: var(--color-dark);
+			border-radius: 50%;
+
+		}
+
+		&::after {
+			content: "";
+			width: 100%;
+			height: rem(1);
+			background-color: var(--color-accent-dark);
+			position: absolute;
+			bottom: 0;
+		}
+	}
+}

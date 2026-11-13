@@ -24,3 +24,8 @@ export type ApproachItem = {
 	title: string;
 	description: string;
 }
+
+export type PriceItem = {
+	id: number,
+	text: string;
+}

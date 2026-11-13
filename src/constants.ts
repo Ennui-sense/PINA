@@ -1,4 +1,4 @@
-import type { ApproachItem, Case, MenuItem, SocialsItem } from "./types";
+import type { ApproachItem, Case, MenuItem, PriceItem, SocialsItem } from "./types";
 
 import VkIcon from "~/assets/icons/vk.svg?react";
 import TelegramIcon from "~/assets/icons/telegram.svg?react";
@@ -89,3 +89,22 @@ export const APPROACH_ITEMS: ApproachItem[] = [
       "Рассчитываем стоимость исходя из числа гостей, времени работы и выбранного меню.",
   },
 ];
+
+export const PRICE_ITEMS: PriceItem[] = [
+	{
+		id: 1,
+		text: "Разработка коктельной карты"
+	},
+	{
+		id: 2,
+		text: "Расчет и согласование закупки"
+	},
+	{
+		id: 1,
+		text: "Доставка и барное оборудование"
+	},
+	{
+		id: 1,
+		text: "Работа бармена на мероприятии"
+	},
+]
