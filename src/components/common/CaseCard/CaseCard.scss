@@ -1,0 +1,58 @@
+@use "~/styles/helpers" as *;
+
+.case-card {
+	border-radius: var(--border-radius);
+	padding: rem(8) rem(8) rem(40);
+	box-shadow: var(--box-shadow);
+	height: 100%;
+	position: relative;
+
+	&::after {
+		@include square(rem(24));
+
+		content: "";
+		background-color: var(--color-light);
+		border-radius: 50%;
+		box-shadow: var(--box-shadow);
+		position: absolute;
+		top: rem(20);
+		right: rem(20);
+	}
+	
+	@include hover {
+		.case-card__image {
+			transform: scale(1.2);
+		}
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__media {
+		width: 100%;
+		height: rem(300);
+		margin-bottom: rem(28);
+		border-radius: var(--border-radius);
+		overflow: hidden;
+	}
+	
+	&__image {
+		width: 100%;
+		overflow: hidden;
+		height: 100%;
+		object-fit: cover;
+		border-radius: var(--border-radius);
+		transition-duration: var(--transition-duration);
+	}
+
+	&__date {
+		font-size: rem(16);
+		margin-bottom: rem(4);
+	}
+
+	&__title {
+		margin-bottom: rem(12);
+	}
+}

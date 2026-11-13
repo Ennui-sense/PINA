@@ -1,0 +1,16 @@
+@use "~/styles/helpers" as *;
+
+.cases {
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(80);
+		align-items: center;
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		column-gap: rem(40);
+	}
+}

@@ -10,3 +10,11 @@ export type SocialsItem = {
 	Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
 	href: string
 }
+
+export type Case = {
+	id: number;
+	imageSrc: string;
+	date: string;
+	title: string;
+	description: string;
+}

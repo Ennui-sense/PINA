@@ -3,6 +3,10 @@
 .logo {
   display: flex;
 
+	@include hover {
+		opacity: .6;
+	}
+
   &--column {
     flex-direction: column;
     row-gap: rem(24);
