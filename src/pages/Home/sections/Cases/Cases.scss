@@ -6,6 +6,10 @@
 		flex-direction: column;
 		row-gap: rem(80);
 		align-items: center;
+
+		@include desktop-l {
+			row-gap: rem(60);
+		}
 	}
 
 	&__list {

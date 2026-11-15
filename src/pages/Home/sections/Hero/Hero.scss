@@ -3,31 +3,41 @@
 .hero {
   height: 100vh;
   position: relative;
-	margin-bottom: rem(60);
+  margin-bottom: rem(60);
 
-  &::after {
-    content: "";
-    background: url("/src/assets/images/man.svg") center / cover no-repeat;
-    height: 100%;
-    width: 60%;
+  &__image {
     position: absolute;
-    left: 0;
-		bottom: 0;
-		z-index: -1;
+    width: auto;
+    z-index: -1;
+
+    &--man {
+      height: 95vh;
+      left: rem(-100);
+      bottom: 0;
+    }
+
+    &--hand {
+      height: 30vh;
+      right: 0;
+      bottom: 30vh;
+    }
   }
 
   &__inner {
     display: flex;
     height: 100%;
     padding-bottom: rem(100);
-    position: relative;
+
+    @include desktop-l {
+      padding-bottom: rem(60);
+    }
   }
 
   &__logo {
     position: absolute;
     top: 50%;
-    right: rem(200);
-    transform: translateY(-50%);
+    left: 60%;
+    transform: translate(-50%, -50%);
   }
 
   &__link {

@@ -4,6 +4,8 @@ import Section from "~/layouts/Section/Section";
 
 import { APPROACH_ITEMS } from "~/constants";
 
+import starImageSrc from "~/assets/images/star.svg";
+
 const Approach = () => {
   return (
     <Section
@@ -15,15 +17,17 @@ const Approach = () => {
       description={`Каждое мероприятие уникально —\u00A0это отдельная история, которую мы разделяем вместе с вами`}
     >
       <div className="approach__inner">
-				<dl className="approach__list">
-					{APPROACH_ITEMS.map(({id, title, description}) => (
-						<div className="approach__item" key={id}>
-							<dt className="approach__title h3">{title}</dt>
-							<dd className="approach__description">{description}</dd>
-						</div>
-					))}
-				</dl>
-			</div>
+        <dl className="approach__list">
+          {APPROACH_ITEMS.map(({ id, title, description }) => (
+            <div className="approach__item" key={id}>
+              <dt className="approach__title h3">{title}</dt>
+              <dd className="approach__description">{description}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+
+      <img src={starImageSrc} alt="" className="approach__image" width={420} height={460} loading="lazy" />
     </Section>
   )
 }

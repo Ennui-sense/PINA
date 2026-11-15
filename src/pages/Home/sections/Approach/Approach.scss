@@ -1,17 +1,6 @@
 @use "~/styles/helpers" as *;
 
 .approach {
-	&::after {
-		content: "";
-		background: url("/src/assets/images/star.svg") center / cover no-repeat;
-		width: rem(420);
-		height: rem(460);
-		display: flex;
-		position: absolute;
-		bottom: 0;
-		left: 27vw;
-	}
-
 	&__list {
 		display: flex;
 		flex-direction: column;
@@ -28,11 +17,11 @@
 			content: "";
 			width: 100%;
 			height: rem(1);
-			background-color: var(--color-accent-dark);
+			font-family: var(--font-family-base);
+			background-color: var(--color-accent-red-40);
 			position: absolute;
 			bottom: 0;
 			left: 0;
-			font-family: var(--font-family-base);
 		}
 	}
 
@@ -43,6 +32,22 @@
 			content: counter(index, decimal-leading-zero);
 			position: absolute;
 			left: 0;
+		}
+	}
+
+	&__description {
+		color: var(--color-accent-red-80)
+	}
+
+	&__image {
+		position: absolute;
+		bottom: 0;
+		width: min(15%, rem(420));
+		left: 35%;
+
+		@include desktop-l {
+			width: 20vw;
+			left: 30vw;
 		}
 	}
 }

@@ -17,8 +17,8 @@ const Logo = ({ direction = "row", theme = "dark", className }: LogoProps) => {
       <img
         src={isDarkTheme ? LogoDarkImageSrc : LogoLightImageSrc}
         alt="Логотип PINA"
-        width={254}
-        height={110}
+        width={200}
+        height={90}
         className="logo__image"
       />
 

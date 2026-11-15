@@ -1,15 +1,16 @@
 @use "~/styles/helpers" as *;
 
 .cta {
-  &__inner {
-		&::after {
-			content: "";
-			position: absolute;
-			width: rem(750);
-			height: rem(500);
-			bottom: 0;
-			right: 0;
-			background: url("/src/assets/images/woman.svg") center / cover no-repeat;
+	&__inner {
+		position: relative;
+	}
+
+	&__image {
+		height: 100%;
+		margin-bottom: rem(-80);
+
+		@include desktop-l {
+			margin-bottom: rem(-60);
 		}
-  }
+	}
 }

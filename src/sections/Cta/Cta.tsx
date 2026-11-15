@@ -2,6 +2,8 @@ import "./Cta.scss";
 
 import Section from "~/layouts/Section/Section";
 
+import womanImageSrc from "~/assets/images/woman.svg"
+
 const Cta = () => {
   return (
     <Section
@@ -14,14 +16,14 @@ const Cta = () => {
       withButton
     >
       <div className="cta__inner">
-        {/* <img
-          src={WomanImageSrc}
+        <img
+          src={womanImageSrc}
           alt="Нарисованная женщина сидит и пьет коктейль"
           className="cta__image"
           width={750}
           height={500}
           loading="lazy"
-        /> */}
+        />
       </div>
     </Section>
   );

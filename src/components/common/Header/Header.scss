@@ -5,4 +5,9 @@
 	position: absolute;
 	right: 0;
 	width: 100%;
+	z-index: 100;
+
+	@include desktop-l {
+		margin-top: rem(75);
+	}
 }

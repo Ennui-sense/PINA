@@ -13,7 +13,7 @@
 		content: "";
 		background-color: var(--color-light);
 		border-radius: 50%;
-		box-shadow: var(--box-shadow);
+		box-shadow: var(--box-shadow-alt);
 		position: absolute;
 		top: rem(20);
 		right: rem(20);
@@ -23,11 +23,6 @@
 		.case-card__image {
 			transform: scale(1.2);
 		}
-	}
-
-	&__body {
-		display: flex;
-		flex-direction: column;
 	}
 
 	&__media {
@@ -47,12 +42,33 @@
 		transition-duration: var(--transition-duration);
 	}
 
+	&__body {
+		display: flex;
+		flex-direction: column;
+		padding-inline: rem(8);
+	}
+
+
 	&__date {
 		font-size: rem(16);
 		margin-bottom: rem(4);
+		color: var(--color-accent-red-60)
+
+		// @include desktop-l {
+		// 	font-size: rem(1);
+		// }
 	}
 
 	&__title {
 		margin-bottom: rem(12);
+
+		@include desktop-l {
+			margin-bottom: rem(10);
+		} 
+	}
+
+	&__description {
+		max-width: 75%;
+		color: var(--color-accent-red-80)
 	}
 }

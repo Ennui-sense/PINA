@@ -14,7 +14,7 @@ const Price = () => {
       description="Точная стоимость зависит от количества гостей, времени работы и коктейльной карты. Алкоголь и ингредиенты оплачиваются отдельно"
     >
       <div className="price__inner">
-				<p className="price__text">Что входит</p>
+				<p className="price__text h3">Что входит</p>
 
 				<ul className="price__list">
 					{PRICE_ITEMS.map(({id, text}) => (

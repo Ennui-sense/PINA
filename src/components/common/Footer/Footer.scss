@@ -1,8 +1,8 @@
 @use "~/styles/helpers" as *;
 
 .footer {
-  background-color: var(--color-dark);
-  color: var(--color-accent);
+  background-color: var(--color-accent-red);
+  color: var(--color-accent-yellow);
   border-radius: var(--border-radius-x-large) var(--border-radius-x-large) 0 0;
   padding-block: rem(80) rem(40);
 
@@ -12,26 +12,41 @@
     padding-bottom: rem(80);
     position: relative;
 
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
+    // &::before,
+    // &::after {
+    //   content: "";
+    // }
+
+    // &::after {
+    //   background: url("/src/assets/images/bottles.svg") center / cover no-repeat;
+    // }
+
+    // &::before {
+    //   background: url("/src/assets/images/glass.svg") center / cover no-repeat;
+    // }
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 0;
+
+    &--bottles {
+      width: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include desktop-l {
+        width: 15vw;
+      }
     }
+    
+    &--glass {
+      width: 10%;
+      right: rem(40);
 
-    &::after {
-			background: url("/src/assets/images/bottles.svg") center / cover no-repeat;
-			width: rem(370);
-			height: rem(250);
-			left: 50%;
-			transform: translateX(-50%);
-		}
-		
-    &::before {
-			@include square(rem(180));
-
-			background: url("/src/assets/images/glass.svg") center / cover no-repeat;
-			right: rem(40);			
+      @include desktop-l {
+        width: 15vh;
+      }
     }
   }
 
@@ -61,7 +76,7 @@
       content: "";
       width: rem(1);
       height: 50%;
-      background-color: var(--color-accent-dark);
+      background-color: var(--color-accent-red-40);
       position: absolute;
       right: rem(-20);
       top: 50%;

@@ -1,11 +1,6 @@
 @use "~/styles/helpers" as *;
 
 .price {
-  &__text {
-    font-weight: 700;
-    font-size: rem(28);
-  }
-
 	&__list {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -20,11 +15,16 @@
 		column-gap: rem(32);
 		position: relative;
 
+		@include desktop-l {
+			font-size: rem(20);
+			column-gap: rem(28);
+		}
+
 		&::before {
 			@include square(rem(16));
 
 			content: "";
-			background-color: var(--color-dark);
+			background-color: var(--color-accent-red);
 			border-radius: 50%;
 
 		}
@@ -33,7 +33,7 @@
 			content: "";
 			width: 100%;
 			height: rem(1);
-			background-color: var(--color-accent-dark);
+			background-color: var(--color-accent-red-40);
 			position: absolute;
 			bottom: 0;
 		}

@@ -3,6 +3,10 @@
 .about {
   &__text {
     max-width: rem(650);
+
+    @include desktop-l {
+      max-width: rem(500);
+    }
   }
 
   &__image {
@@ -27,6 +31,10 @@
       content: "";
       background-color: var(--color-light);
       border-radius: 50%;
+
+      @include desktop-l {
+        @include square(rem(100));
+      }
     }
 
     &--1,
