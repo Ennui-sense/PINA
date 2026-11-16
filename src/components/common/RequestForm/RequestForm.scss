@@ -1,0 +1,76 @@
+@use "~/styles/helpers" as *;
+
+.request-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(40);
+
+  &__fields {
+    display: grid;
+    gap: rem(24) rem(40);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "grid-1 grid-2"
+      "grid-3 grid-4"
+      "grid-5 grid-5"
+      "grid-6 grid-6";
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(12);
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        grid-area: grid-#{$i};
+      }
+    }
+  }
+
+  &__label {
+    font-weight: 700;
+    font-size: rem(16);
+    text-transform: uppercase;
+  }
+
+  &__input {
+    height: var(--button-height);
+    border: rem(1) solid var(--color-accent-red-40);
+    border-radius: var(--border-radius-small);
+    padding: 0 0 0 rem(16);
+    outline: none;
+    font-weight: 400;
+    font-size: rem(16);
+
+    @include hover(false) {
+      border-color: green;
+    }
+
+    &:focus {
+      border-color: blue;
+    }
+
+    &::placeholder {
+      color: var(--color-accent-red);
+      font-weight: 400;
+    }
+  }
+
+  &__textarea {
+    resize: none;
+    overflow: hidden;
+    height: rem(180);
+  }
+
+  &__button {
+    align-self: start;
+    margin-bottom: rem(20);
+  }
+
+  &__text {
+    font-style: italic;
+    font-size: rem(16);
+    max-width: rem(560);
+  }
+}

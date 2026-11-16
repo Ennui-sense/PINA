@@ -1,0 +1,16 @@
+@use "~/styles/helpers" as *;
+
+.button {
+  @include flex-center(true);
+  @include button-reset();
+
+  height: var(--button-height);
+  color: var(--color-light);
+  background-color: var(--color-accent-red);
+  padding-inline: rem(60);
+  border-radius: var(--border-radius-large);
+
+  @include desktop-l {
+    padding-inline: rem(48)
+  }
+}

@@ -5,6 +5,7 @@ import About from "./sections/About/About";
 import Cases from "./sections/Cases/Cases";
 import Approach from "./sections/Approach/Approach";
 import Price from "./sections/Price/Price";
+import Request from "./sections/Request/Request";
 
 import Cta from "~/sections/Cta/Cta";
 
@@ -17,6 +18,7 @@ const HomePage = () => {
       <Approach />
       <Price />
       <Cta />
+      <Request />
     </MainLayout>
   );
 };
