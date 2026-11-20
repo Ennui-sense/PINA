@@ -1,6 +1,6 @@
 import "./Menu.scss";
 import clsx from "clsx";
-import { MENU } from "~/constants";
+import { MENU } from "~/data";
 
 interface MenuProps {
   className?: string;

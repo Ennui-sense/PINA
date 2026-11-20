@@ -1,43 +1,116 @@
-import "./RequestForm.scss"
+import "./RequestForm.scss";
 
-import Button from "~/components/ui/Button/Button"
+import Button from "~/components/ui/Button/Button";
+
+import type { SubmitEvent } from "react";
+import { useState } from "react";
+import z from "zod";
+
+import { FORM_FIELDS } from "~/data";
+
+import { URL_API } from "~/constants";
+import RequestFormField from "../RequestFormField/RequestFormField";
+
+import { requestSchema, type RequestFormValues } from "~/schemas/requestSchema";
+import { formatMessage } from "~/lib/formatResult";
+
+type FieldErorrs = Partial<Record<keyof RequestFormValues, string>>;
 
 const RequestForm = () => {
+  const [errors, setErrors] = useState<FieldErorrs>({});
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [success, setSuccess] = useState<boolean>(false);
+  const [serverError, setServerError] = useState<string | null>(null);
+
+  function clearFieldError(field: keyof RequestFormValues) {
+    setErrors((prev) => ({
+      ...prev,
+      [field]: undefined,
+    }));
+  }
+
+  async function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const values = Object.fromEntries(formData.entries());
+
+    const result = requestSchema.safeParse(values);
+
+    if (!result.success) {
+      const fieldErrors = z.flattenError(result.error).fieldErrors;
+
+      const newErrors: FieldErorrs = {};
+
+      for (const field of FORM_FIELDS) {
+        newErrors[field.id] = fieldErrors[field.id]?.[0];
+      }
+
+      setErrors(newErrors);
+      setSuccess(false);
+      setServerError(null);
+      return;
+    }
+
+    setErrors({});
+    setServerError(null);
+    setSuccess(false);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(URL_API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: import.meta.env.VITE_CHAT_ID,
+          parse_mode: "HTML",
+          text: formatMessage(result.data),
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error ${response.status}`);
+      }
+
+      form.reset();
+      setSuccess(true);
+    } catch (err) {
+      console.error(err);
+      setServerError("Не удалось отправить заявку. Попробуйте снова.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
   return (
-    <form className="request-form" action="">
+    <form className="request-form" action="" onSubmit={handleSubmit} noValidate>
       <div className="request-form__fields">
-        <div className="request-form__field">
-          <label htmlFor="name" className="request-form__label">Имя *</label>
-          <input type="text" className="request-form__input" id="name" name="name" placeholder="Как к вам обращаться" />
-        </div>
-        <div className="request-form__field">
-          <label htmlFor="contact" className="request-form__label">Телефон или telegram *</label>
-          <input type="number" className="request-form__input" id="contact" name="contact" />
-        </div>
-        <div className="request-form__field">
-          <label htmlFor="date" className="request-form__label">Дата события</label>
-          <input type="date" className="request-form__input" id="date" name="date" />
-        </div>
-        <div className="request-form__field">
-          <label htmlFor="count" className="request-form__label">Количество гостей</label>
-          <input type="number" className="request-form__input" id="count" name="count" />
-        </div>
-        <div className="request-form__field">
-          <label htmlFor="format" className="request-form__label">Формат события</label>
-          <input type="text" className="request-form__input" id="format" name="format" />
-        </div>
-        <div className="request-form__field">
-          <label htmlFor="comment" className="request-form__label">Комментарий</label>
-          <textarea name="comment" id="comment" className="request-form__input request-form__textarea" rows={10} maxLength={900}></textarea>
-        </div>
+        {FORM_FIELDS.map((field) => (
+          <RequestFormField
+            data={field}
+            key={field.id}
+            error={errors[field.id]}
+						onChange={() => clearFieldError(field.id)}
+          />
+        ))}
       </div>
 
       <div className="request-form__sending">
-        <Button className="request-form__button" type="submit">Отправить</Button>
-        <p className="request-form__text">* Отправляя форму, вы соглашаетесь на обработку персональных данных</p>
+        <Button className="request-form__button" type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Отправляем..." : "Отправить"}
+        </Button>
+
+        {serverError && <p className="request-form__error">{serverError}</p>}
+        {success && <p className="request-form__success">Ваша форма успешно была отправлена!</p>}
+
+        <p className="request-form__text">
+          * Отправляя форму, вы соглашаетесь на обработку персональных данных
+        </p>
       </div>
     </form>
-  )
-}
+  );
+};
 
-export default RequestForm
+export default RequestForm;

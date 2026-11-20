@@ -20,7 +20,8 @@
   }
 
   &__link {
-    font-size: rem(24);
+    // font-size: rem(24);
+    font-size: rem(20);
 		transition-duration: var(--transition-duration);
 
 		@include hover(false) {

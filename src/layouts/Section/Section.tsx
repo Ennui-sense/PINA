@@ -14,8 +14,8 @@ interface SectionProps {
   slogan: string;
   description?: string;
   sectionClassName: string;
-	isCenterPosition?: boolean;
-	withButton?: boolean;
+  isCenterPosition?: boolean;
+  withButton?: boolean;
 }
 
 const Section = ({
@@ -26,8 +26,8 @@ const Section = ({
   slogan,
   description,
   sectionClassName,
-	isCenterPosition = false,
-	withButton = false
+  isCenterPosition = false,
+  withButton = false,
 }: SectionProps) => {
   const hasVariant = variant !== "default";
 
@@ -37,8 +37,9 @@ const Section = ({
         "section",
         hasVariant && `section--${variant}`,
         `section--${direction}`,
-				isCenterPosition && "section--center"
+        isCenterPosition && "section--center",
       )}
+      id={`section--${sectionClassName}`}
     >
       <div className="section__inner container">
         <header className="section__header">
@@ -48,7 +49,11 @@ const Section = ({
           </div>
 
           {description && <p className="section__description">{description}</p>}
-          {withButton && <Link className="section__link" href="/">Заказать</Link>}
+          {withButton && (
+            <Link className="section__link" href="/">
+              Заказать
+            </Link>
+          )}
         </header>
 
         <div className={clsx("section__body", sectionClassName)}>

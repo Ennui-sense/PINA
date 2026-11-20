@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="hero__inner container">
         <Logo className="hero__logo" />
 
-        <Link className="hero__link" withArrow href="/">
+        <Link className="hero__link" withArrow href="#section--request">
           Заказать
         </Link>
       </div>

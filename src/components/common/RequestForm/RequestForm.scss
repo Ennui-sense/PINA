@@ -16,53 +16,6 @@
       "grid-6 grid-6";
   }
 
-  &__field {
-    display: flex;
-    flex-direction: column;
-    row-gap: rem(12);
-
-    @for $i from 1 through 6 {
-      &:nth-child(#{$i}) {
-        grid-area: grid-#{$i};
-      }
-    }
-  }
-
-  &__label {
-    font-weight: 700;
-    font-size: rem(16);
-    text-transform: uppercase;
-  }
-
-  &__input {
-    height: var(--button-height);
-    border: rem(1) solid var(--color-accent-red-40);
-    border-radius: var(--border-radius-small);
-    padding: 0 0 0 rem(16);
-    outline: none;
-    font-weight: 400;
-    font-size: rem(16);
-
-    @include hover(false) {
-      border-color: green;
-    }
-
-    &:focus {
-      border-color: blue;
-    }
-
-    &::placeholder {
-      color: var(--color-accent-red);
-      font-weight: 400;
-    }
-  }
-
-  &__textarea {
-    resize: none;
-    overflow: hidden;
-    height: rem(180);
-  }
-
   &__button {
     align-self: start;
     margin-bottom: rem(20);

@@ -13,4 +13,8 @@
   @include desktop-l {
     padding-inline: rem(48)
   }
+
+	&--disabled {
+		background-color: var(--color-accent-red-60);
+	}
 }

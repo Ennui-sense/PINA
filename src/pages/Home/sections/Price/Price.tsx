@@ -2,7 +2,7 @@ import "./Price.scss";
 
 import Section from "~/layouts/Section/Section";
 
-import { PRICE_ITEMS } from "~/constants";
+import { PRICE_ITEMS } from "~/data";
 
 const Price = () => {
   return (

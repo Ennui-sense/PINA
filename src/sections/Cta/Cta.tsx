@@ -2,7 +2,7 @@ import "./Cta.scss";
 
 import Section from "~/layouts/Section/Section";
 
-import womanImageSrc from "~/assets/images/woman.svg"
+import womanImageSrc from "~/assets/images/woman.svg";
 
 const Cta = () => {
   return (

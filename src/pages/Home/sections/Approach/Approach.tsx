@@ -2,7 +2,7 @@ import "./Approach.scss";
 
 import Section from "~/layouts/Section/Section";
 
-import { APPROACH_ITEMS } from "~/constants";
+import { APPROACH_ITEMS } from "~/data";
 
 import starImageSrc from "~/assets/images/star.svg";
 

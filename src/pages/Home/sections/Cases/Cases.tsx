@@ -5,7 +5,7 @@ import Section from "~/layouts/Section/Section";
 import Link from "~/components/ui/Link/Link";
 import CaseCard from "~/components/common/CaseCard/CaseCard";
 
-import { CASES } from "~/constants";
+import { CASES } from "~/data";
 
 const Cases = () => {
   return (

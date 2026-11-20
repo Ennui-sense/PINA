@@ -6,11 +6,21 @@ interface ButtonProps {
   className?: string;
   children: string;
   type?: "button" | "submit";
+  disabled?: boolean;
 }
 
-const Button = ({ className, children, type = "button" }: ButtonProps) => {
+const Button = ({
+  className,
+  children,
+  type = "button",
+  disabled = false,
+}: ButtonProps) => {
   return (
-    <button type={type} className={clsx("button", className)}>
+    <button
+      type={type}
+      className={clsx("button", className, disabled && "button--disabled")}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

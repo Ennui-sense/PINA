@@ -8,10 +8,14 @@
 	}
 
 	&__item {
-		max-width: rem(750);
+		max-width: rem(650);
 		padding: rem(32) rem(70);
 		position: relative;
 		counter-increment: index 1;
+
+		@include desktop-l {
+			max-width: rem(650);
+		}
 
 		&::after {
 			content: "";
@@ -42,12 +46,12 @@
 	&__image {
 		position: absolute;
 		bottom: 0;
-		width: min(15%, rem(420));
-		left: 35%;
+		width: min(18%, rem(420));
+		left: 30%;
 
 		@include desktop-l {
-			width: 20vw;
-			left: 30vw;
+			width: 20%;
+			left: 25%;
 		}
 	}
 }

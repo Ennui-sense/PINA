@@ -1,0 +1,70 @@
+import "./RequestFormField.scss";
+
+import type { FormField } from "~/types";
+
+import { InputMask } from "@react-input/mask";
+
+interface RequestFormFieldProps {
+  data: FormField;
+  error?: string;
+  onChange?: () => void;
+}
+
+const RequestFormField = ({ data, error, onChange }: RequestFormFieldProps) => {
+  const {
+    id,
+    label,
+    type,
+    placeholder,
+    maskOptions,
+    min,
+    max,
+    maxLength,
+    inputType,
+    required,
+  } = data;
+
+  const inputProps = {
+    id,
+    name: id,
+    placeholder,
+    onChange,
+  };
+
+  return (
+    <div className="request-form-field">
+      <label htmlFor={id} className="request-form-field__label">
+        {label}
+        {required && " *"}
+      </label>
+
+      {type === "textarea" ? (
+        <textarea
+          {...inputProps}
+          className="request-form-field__input request-form-field__textarea"
+          maxLength={maxLength}
+        ></textarea>
+      ) : maskOptions ? (
+        <InputMask
+          {...inputProps}
+          {...maskOptions}
+          type="tel"
+          className="request-form-field__input"
+        />
+      ) : (
+        <input
+          {...inputProps}
+          type={inputType}
+          className="request-form-field__input"
+          min={min}
+          max={max}
+          maxLength={maxLength}
+        />
+      )}
+
+      {error && <p className="request-form-field__error">{error}</p>}
+    </div>
+  );
+};
+
+export default RequestFormField;

@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import "./Socials.scss";
-import { SOCIALS } from "~/constants";
+import { SOCIALS } from "~/data";
 
 interface SocialsProps {
   className?: string;
