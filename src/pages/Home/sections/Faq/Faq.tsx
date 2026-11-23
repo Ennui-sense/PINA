@@ -1,4 +1,4 @@
-import "./Approach.scss";
+import "./Faq.scss";
 
 import Section from "~/layouts/Section/Section";
 
@@ -6,7 +6,7 @@ import { APPROACH_ITEMS } from "~/data";
 
 import starImageSrc from "~/assets/images/star.svg";
 
-const Approach = () => {
+const Faq = () => {
   return (
     <Section
       sectionClassName="approach"
@@ -32,4 +32,4 @@ const Approach = () => {
   )
 }
 
-export default Approach;
+export default Faq;

@@ -8,7 +8,7 @@
 		align-items: center;
 
 		@include desktop-l {
-			row-gap: rem(60);
+			row-gap: rem(48);
 		}	
 
 		@include tablet {
@@ -26,7 +26,10 @@
 		}
 
 		@include tablet {
-			column-gap: rem(20);
+			display: flex;
+			flex-direction: column;
+			row-gap: rem(28);
+			width: 100%;
 		}
 	}
 }

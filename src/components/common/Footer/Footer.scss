@@ -6,11 +6,19 @@
   border-radius: var(--border-radius-x-large) var(--border-radius-x-large) 0 0;
   padding-block: rem(80) rem(40);
 
+	@include tablet {
+		padding-block: rem(48) rem(24);
+	}
+
   &__top {
     display: flex;
     justify-content: space-between;
     padding-bottom: rem(80);
     position: relative;
+
+		@include tablet {
+			padding-bottom: rem(48);
+		}
   }
 
   &__image {
@@ -23,7 +31,7 @@
       transform: translateX(-50%);
 
       @include desktop-l {
-        width: 15vw;
+        width: 15%;
       }
     }
     
@@ -32,7 +40,7 @@
       right: rem(40);
 
       @include desktop-l {
-        width: 15vh;
+        width: 10%;
       }
     }
   }
@@ -42,6 +50,11 @@
     padding-top: rem(20);
     display: flex;
     justify-content: space-between;
+		align-items: center;
+
+		@include tablet {
+			padding-top: rem(24);
+		}
   }
 
   &__text {

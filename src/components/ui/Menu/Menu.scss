@@ -14,6 +14,14 @@
         column-gap: rem(48);
       }
     }
+
+		.menu__link {
+			&:not([aria-current="page"]) {
+				@include hover(false) {
+					opacity: 0.6;
+				}
+			}
+		}
   }
 
   &--column {
@@ -21,6 +29,20 @@
       flex-direction: column;
       row-gap: rem(12);
       text-align: end;
+    }
+
+    .menu__link {
+      &:not([aria-current="page"]) {
+        @include hover(false) {
+          &::before {
+            content: "";
+            width: rem(23);
+            height: rem(14);
+            background: url("/src/assets/icons/arrow-right.svg") center / cover
+              no-repeat;
+          }
+        }
+      }
     }
   }
 
@@ -43,21 +65,8 @@
       pointer-events: none;
     }
 
-    &:not([aria-current="page"]) {
-      @include hover(false) {
-        &::before {
-          content: "";
-          width: rem(23);
-          height: rem(14);
-          background: url("/src/assets/icons/arrow-right.svg") center / cover no-repeat;
-
-        }
-      }
-    }
-
     &:active {
       opacity: 0.3;
     }
-
   }
 }

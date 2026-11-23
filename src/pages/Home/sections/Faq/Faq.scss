@@ -17,6 +17,11 @@
 			max-width: rem(650);
 		}
 
+		@include tablet {
+			max-width: rem(550);
+			padding: rem(20) rem(48);
+		}
+
 		&::after {
 			content: "";
 			width: 100%;
@@ -37,10 +42,14 @@
 			position: absolute;
 			left: 0;
 		}
+
+		@include tablet {
+			margin-bottom: rem(8);
+		}
 	}
 
 	&__description {
-		color: var(--color-accent-red-80)
+		color: var(--color-accent-red-80);
 	}
 
 	&__image {
@@ -52,6 +61,11 @@
 		@include desktop-l {
 			width: 20%;
 			left: 25%;
+		}
+
+		@include desktop-l {
+			width: 25%;
+			left: 15%;
 		}
 	}
 }

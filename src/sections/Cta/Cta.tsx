@@ -13,7 +13,7 @@ const Cta = () => {
       slogan="За ваш повод!"
       description="Бар целиком — под ваше мероприятие. Корпоративы, дни рождения, свадьбы, закрытые вечеринки"
       direction="row"
-      withButton
+      withLink
     >
       <div className="cta__inner">
         <img

@@ -15,7 +15,7 @@ interface SectionProps {
   description?: string;
   sectionClassName: string;
   isCenterPosition?: boolean;
-  withButton?: boolean;
+  withLink?: boolean;
 }
 
 const Section = ({
@@ -27,7 +27,7 @@ const Section = ({
   description,
   sectionClassName,
   isCenterPosition = false,
-  withButton = false,
+  withLink = false,
 }: SectionProps) => {
   const hasVariant = variant !== "default";
 
@@ -49,7 +49,7 @@ const Section = ({
           </div>
 
           {description && <p className="section__description">{description}</p>}
-          {withButton && (
+          {withLink && (
             <Link className="section__link" href="/">
               Заказать
             </Link>

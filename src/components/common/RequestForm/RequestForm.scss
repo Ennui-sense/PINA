@@ -5,6 +5,10 @@
   flex-direction: column;
   row-gap: rem(40);
 
+	@include desktop-l {
+		row-gap: rem(24);
+	}
+
   &__fields {
     display: grid;
     gap: rem(24) rem(40);
@@ -14,6 +18,14 @@
       "grid-3 grid-4"
       "grid-5 grid-5"
       "grid-6 grid-6";
+
+		@include desktop-l {
+			gap: rem(16) rem(24)
+		}
+
+		@include tablet {
+			gap: rem(12) rem(16)
+		}
   }
 
   &__button {

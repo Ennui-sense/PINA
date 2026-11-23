@@ -14,5 +14,10 @@
 			margin-bottom: rem(-60);
 			width: rem(600);
 		}
+
+		@include tablet {
+			margin-bottom: rem(-40);
+			width: rem(500);
+		}
 	}
 }

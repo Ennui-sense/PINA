@@ -166,6 +166,6 @@ export const FORM_FIELDS: FormField[] = [
     placeholder: "Опишите детали, которые считаете нужным знать бармену",
     label: "Комментарий",
     type: "textarea",
-    maxLength: 800,
+    maxLength: 500,
   },
 ];

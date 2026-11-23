@@ -20,6 +20,12 @@
 			column-gap: rem(28);
 		}
 
+		@include tablet {
+			font-size: rem(18);
+			column-gap: rem(24);
+			padding-block: rem(24);
+		}
+
 		&::before {
 			@include square(rem(16));
 
