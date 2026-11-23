@@ -9,12 +9,24 @@
 
 		@include desktop-l {
 			row-gap: rem(60);
-		}
+		}	
+
+		@include tablet {
+			row-gap: rem(32);
+		}	
 	}
 
 	&__list {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		column-gap: rem(40);
+
+		@include desktop {
+			column-gap: rem(32);
+		}
+
+		@include tablet {
+			column-gap: rem(20);
+		}
 	}
 }

@@ -12,6 +12,8 @@ import Cta from "~/sections/Cta/Cta";
 const HomePage = () => {
   return (
     <MainLayout>
+      <title>PINA. | Главная</title>
+
       <Hero />
       <About />
       <Cases />

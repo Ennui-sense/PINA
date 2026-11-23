@@ -47,3 +47,5 @@ export type FormField = {
   max?: number;
   required?: boolean;
 };
+
+export type Breakpoints = "mobile-s" | "mobile" | "tablet" | "desktop" | "desktop-l"

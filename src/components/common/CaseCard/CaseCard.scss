@@ -7,6 +7,14 @@
 	height: 100%;
 	position: relative;
 
+	@include desktop {
+		padding-bottom: rem(32);
+	}
+
+	@include tablet {
+		padding-bottom: rem(20);
+	}
+
 	&::after {
 		@include square(rem(24));
 
@@ -31,6 +39,16 @@
 		margin-bottom: rem(28);
 		border-radius: var(--border-radius);
 		overflow: hidden;
+
+		@include desktop {
+			height: rem(220);
+			margin-bottom: rem(24);
+		}
+
+		@include tablet {
+			height: rem(180);
+			margin-bottom: rem(16);
+		}
 	}
 	
 	&__image {
@@ -48,15 +66,15 @@
 		padding-inline: rem(8);
 	}
 
-
 	&__date {
 		font-size: rem(16);
 		margin-bottom: rem(4);
-		color: var(--color-accent-red-60)
+		color: var(--color-accent-red-60);
+		text-transform: lowercase;
 
-		// @include desktop-l {
-		// 	font-size: rem(1);
-		// }
+		@include tablet {
+			font-size: rem(12);
+		}
 	}
 
 	&__title {
@@ -64,11 +82,15 @@
 
 		@include desktop-l {
 			margin-bottom: rem(10);
+		}
+
+		@include tablet {
+			margin-bottom: rem(8);
 		} 
 	}
 
 	&__description {
 		max-width: 75%;
-		color: var(--color-accent-red-80)
+		color: var(--color-accent-red-80);
 	}
 }

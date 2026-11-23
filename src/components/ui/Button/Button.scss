@@ -10,6 +10,10 @@
   padding-inline: rem(60);
   border-radius: var(--border-radius-large);
 
+  @include hover(false) {
+    background-color: var(--color-accent-red-80);
+  }
+
   @include desktop-l {
     padding-inline: rem(48)
   }

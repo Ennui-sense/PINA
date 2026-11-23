@@ -10,11 +10,11 @@ const Approach = () => {
   return (
     <Section
       sectionClassName="approach"
-      title="Как мы работаем"
-      slogan="Индивидуальный подход"
+      title="Часто задаваемые вопросы"
+      slogan="Перед праздником"
       variant="green"
       direction="row"
-      description={`Каждое мероприятие уникально —\u00A0это отдельная история, которую мы разделяем вместе с вами`}
+      description={`Рассказываем, куда можем выехать, как выбрать место для бара и что указать в заявке.`}
     >
       <div className="approach__inner">
         <dl className="approach__list">

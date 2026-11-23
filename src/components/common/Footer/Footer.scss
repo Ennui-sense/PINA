@@ -11,19 +11,6 @@
     justify-content: space-between;
     padding-bottom: rem(80);
     position: relative;
-
-    // &::before,
-    // &::after {
-    //   content: "";
-    // }
-
-    // &::after {
-    //   background: url("/src/assets/images/bottles.svg") center / cover no-repeat;
-    // }
-
-    // &::before {
-    //   background: url("/src/assets/images/glass.svg") center / cover no-repeat;
-    // }
   }
 
   &__image {
@@ -61,6 +48,10 @@
     font-weight: 700;
     font-size: rem(16);
     text-transform: uppercase;
+
+    @include desktop-l {
+      font-size: rem(14);
+    }
   }
 
   &__info {

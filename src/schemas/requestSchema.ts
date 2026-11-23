@@ -5,11 +5,12 @@ export const requestSchema = z.object({
   name: z
     .string()
     .trim()
-    .min(2, "Слишком короткое имя")
-    .max(50, "Слишком длинное имя"),
+    .refine(value => value, "Поле обязательно для заполнения")
+    .min(2, "Слишком короткое имя"),
 
   contact: z
     .string()
+    .refine(value => value, "Поле обязательно для заполнения")
     .regex(/^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/, "Введите номер полностью"),
 
   date: z

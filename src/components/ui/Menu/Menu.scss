@@ -3,11 +3,16 @@
 .menu {
   &__list {
     display: flex;
+    justify-content: end;
   }
 
   &--row {
     .menu__list {
       column-gap: rem(60);
+
+      @include desktop {
+        column-gap: rem(48);
+      }
     }
   }
 
@@ -20,20 +25,39 @@
   }
 
   &__link {
-    // font-size: rem(24);
-    font-size: rem(20);
-		transition-duration: var(--transition-duration);
-
-		@include hover(false) {
-			opacity: 0.6;
-		}
-
-		&:active {
-			opacity: 0.3;
-		}
+    font-size: rem(24);
+    align-items: center;
+    column-gap: rem(10);
+    transition-duration: var(--transition-duration);
 
     @include desktop-l {
       font-size: rem(20);
     }
+
+    @include tablet {
+      font-size: rem(18);
+    }
+
+    &[aria-current="page"] {
+      text-decoration: underline;
+      pointer-events: none;
+    }
+
+    &:not([aria-current="page"]) {
+      @include hover(false) {
+        &::before {
+          content: "";
+          width: rem(23);
+          height: rem(14);
+          background: url("/src/assets/icons/arrow-right.svg") center / cover no-repeat;
+
+        }
+      }
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+
   }
 }

@@ -6,11 +6,13 @@
 	}
 
 	&__image {
-		height: 25vw;
+		width: rem(750);
+		height: auto;
 		margin-bottom: rem(-80);
 
 		@include desktop-l {
 			margin-bottom: rem(-60);
+			width: rem(600);
 		}
 	}
 }

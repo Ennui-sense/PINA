@@ -35,6 +35,10 @@
       @include desktop-l {
         @include square(rem(100));
       }
+
+      @include tablet {
+        @include square(rem(70));
+      }
     }
 
     &--1,

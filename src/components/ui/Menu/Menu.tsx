@@ -1,6 +1,10 @@
 import "./Menu.scss";
+
 import clsx from "clsx";
+
 import { MENU } from "~/data";
+
+import { NavLink } from "react-router";
 
 interface MenuProps {
   className?: string;
@@ -13,9 +17,9 @@ const Menu = ({ className, direction = "column" }: MenuProps) => {
       <ul className="menu__list">
         {MENU.map(({ label, href }) => (
           <li className="menu__item" key={href}>
-            <a href={href} className="menu__link">
+            <NavLink to={href} className="menu__link">
               {label}
-            </a>
+            </NavLink>
           </li>
         ))}
       </ul>

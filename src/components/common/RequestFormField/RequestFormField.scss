@@ -3,7 +3,6 @@
 .request-form-field {
   display: flex;
   flex-direction: column;
-  row-gap: rem(12);
 
   @for $i from 1 through 6 {
     &:nth-child(#{$i}) {
@@ -15,28 +14,37 @@
     font-weight: 700;
     font-size: rem(16);
     text-transform: uppercase;
+    margin-bottom: rem(12);
   }
 
   &__input {
     height: var(--button-height);
-    border: rem(1) solid var(--color-accent-red-40);
+    outline: rem(1) solid var(--color-accent-red-40);
     border-radius: var(--border-radius-small);
     padding: 0 0 0 rem(16);
-    outline: none;
+    border: none;
     font-weight: 400;
     font-size: rem(16);
+    margin-bottom: rem(8);
+    font-weight: 500;
+    color: var(--color-accent-red);
+    transition-duration: 0;
 
     @include hover(false) {
-      border-color: green;
+      outline-width: rem(2)
     }
 
     &:focus {
-      border-color: blue;
+      outline-width: rem(1);
     }
 
     &::placeholder {
-      color: var(--color-accent-red);
+      color: var(--color-accent-red-60);
       font-weight: 400;
+    }
+
+    &--error {
+      outline: rem(2) solid var(--color-error);
     }
   }
 
@@ -44,6 +52,13 @@
     resize: none;
     overflow: hidden;
     height: rem(180);
-		padding-top: rem(18);
+    padding-top: rem(18);
+  }
+
+  &__error {
+    font-size: rem(16);
+    font-weight: 400;
+    color: var(--color-error);
+    text-decoration: underline;
   }
 }

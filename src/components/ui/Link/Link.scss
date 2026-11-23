@@ -29,6 +29,22 @@
 		
 		& svg {
 			height: 60%;
+			transform: rotate(-135deg);
+			transition-duration: var(--transition-duration);
+		}
+	}
+
+	@include hover(false) {
+		.link__text {
+			background-color: var(--color-accent-red-80);
+		}
+
+		.link__arrow {
+			background-color: var(--color-accent-red-80);
+
+			& svg {
+				transform: rotate(0);
+			}
 		}
 	}
 

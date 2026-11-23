@@ -12,6 +12,10 @@
     @include desktop-l {
       padding-block: rem(60);
     }
+
+    @include tablet {
+      padding-block: rem(48);
+    }
   }
 
   &--row {
@@ -30,6 +34,10 @@
     .section__inner {
       flex-direction: column;
       row-gap: rem(40);
+
+      @include tablet {
+        row-gap: rem(32);
+      }
     }
 
     .section__header {
@@ -77,32 +85,42 @@
     @include desktop-l {
       margin-bottom: rem(16);
     }
+
+    @include tablet {
+      margin-bottom: rem(12);
+    }
   }
 
   &__slogan {
     font-family: var(--font-family-accent);
     text-transform: uppercase;
     line-height: 1.1;
-    // font-size: rem(64);
-    // max-width: rem(600);
-		font-size: rem(48);
-		max-width: rem(400);
+    font-size: rem(64);
+    max-width: rem(600);
 
     @include desktop-l {
       font-size: rem(48);
       max-width: rem(400);
     }
+
+    @include tablet {
+      font-size: rem(40);
+      max-width: rem(340);
+    }
   }
 
   &__description {
-		// max-width: rem(620);
-    // font-size: rem(24);
-    font-size: rem(20);
-    max-width: rem(520);
+		max-width: rem(620);
+    font-size: rem(24);
 
     @include desktop-l {
       font-size: rem(20);
       max-width: rem(520);
+    }
+
+    @include desktop-l {
+      font-size: rem(18);
+      max-width: rem(450);
     }
   }
 }

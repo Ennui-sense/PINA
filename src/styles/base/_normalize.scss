@@ -28,8 +28,7 @@ body,
   Убираем внешние отступы вертикали нужным тегам,
   у которых есть атрибут class
  */
-:where(
-  h1,
+:where(h1,
   h2,
   h3,
   h4,
@@ -38,8 +37,7 @@ body,
   p,
   ul,
   ol,
-  dl
-):where([class]) {
+  dl):where([class]) {
   margin-block: 0;
 }
 
@@ -102,6 +100,11 @@ textarea,
 select,
 button {
   font: inherit;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
 }
 
 html {
@@ -168,10 +171,8 @@ label {
   (за исключением тех, у которых уже указан
   атрибут stroke со значением 'none')
  */
-:where([stroke]:not(
-  [stroke="none"],
-  [stroke^="url"]
-)) {
+:where([stroke]:not([stroke="none"],
+    [stroke^="url"])) {
   stroke: currentColor;
 }
 
@@ -195,6 +196,7 @@ svg * {
   которые предпочитают их не использовать
  */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   ::before,
   ::after {
@@ -207,5 +209,5 @@ svg * {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }

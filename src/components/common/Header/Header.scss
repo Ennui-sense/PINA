@@ -10,4 +10,8 @@
 	@include desktop-l {
 		margin-top: rem(75);
 	}
+
+	@include tablet {
+		margin-top: rem(60);
+	}
 }

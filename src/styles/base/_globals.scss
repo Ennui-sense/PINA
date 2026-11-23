@@ -42,6 +42,10 @@ h2,
 .h2 {
   font-size: rem(16);
   text-transform: uppercase;
+
+  @include tablet {
+    font-size: rem(14);
+  }
 }
 
 h3,
@@ -51,9 +55,13 @@ h3,
   @include desktop-l {
     font-size: rem(24);
   }
+
+  @include tablet {
+    font-size: rem(20);
+  }
 }
 
-:not(input):focus-visible {
+:not(input, textarea):focus-visible {
   outline: rem(2) dashed red;
   outline-offset: rem(4);
   transition-duration: 0s !important;

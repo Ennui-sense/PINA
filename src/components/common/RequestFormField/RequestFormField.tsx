@@ -3,6 +3,7 @@ import "./RequestFormField.scss";
 import type { FormField } from "~/types";
 
 import { InputMask } from "@react-input/mask";
+import clsx from "clsx";
 
 interface RequestFormFieldProps {
   data: FormField;
@@ -49,13 +50,13 @@ const RequestFormField = ({ data, error, onChange }: RequestFormFieldProps) => {
           {...inputProps}
           {...maskOptions}
           type="tel"
-          className="request-form-field__input"
+          className={clsx("request-form-field__input", error && "request-form-field__input--error")}
         />
       ) : (
         <input
           {...inputProps}
           type={inputType}
-          className="request-form-field__input"
+          className={clsx("request-form-field__input", error && "request-form-field__input--error")}
           min={min}
           max={max}
           maxLength={maxLength}

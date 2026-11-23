@@ -4,12 +4,16 @@
   display: flex;
 
 	@include hover {
-		opacity: .6;
+		opacity: 0.6;
 	}
 
   &--column {
     flex-direction: column;
     row-gap: rem(24);
+
+    @include tablet {
+      row-gap: rem(16);
+    }
   }
 
   &--row {
@@ -18,19 +22,21 @@
   }
 
   &__image {
-		width: rem(150);
+		width: rem(200);
 
 		@include desktop-l {
 			width: rem(150);
+    }
+
+    @include tablet {
+      width: rem(128);
     }
   }
 
   &__text {
 		line-height: 1.25;
-    // font-size: rem(24);
-    // max-width: rem(350);
-		font-size: rem(20);
-		max-width: rem(300);
+    font-size: rem(24);
+    max-width: rem(350);
 
     &-accent {
       font-weight: 700;
@@ -41,6 +47,11 @@
     @include desktop-l {
       font-size: rem(20);
       max-width: rem(300);
+    }
+
+    @include tablet {
+      max-width: rem(250);
+      font-size: rem(18);
     }
   }
 }
