@@ -4,12 +4,22 @@
   display: flex;
   column-gap: rem(20);
 
-  &__link {
-    @include square(rem(40));
+  @include mobile {
+    column-gap: rem(12);
+  }
 
+  &__link {
     @include hover {
       & svg * {
         fill: var(--color-accent-red-60);
+      }
+    }
+
+    & svg {
+      @include square(rem(40));
+
+      @include mobile {
+        @include square(rem(32));
       }
     }
   }

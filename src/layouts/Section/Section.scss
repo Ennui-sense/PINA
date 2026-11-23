@@ -1,16 +1,16 @@
 @use "~/styles/helpers" as *;
 
 .section {
-	border-radius: var(--border-radius-x-large);
+  border-radius: var(--border-radius-x-large);
   position: relative;
   margin-bottom: rem(40);
 
-	@include tablet {
-		margin-bottom: rem(24);
-	}
-	
+  @include tablet {
+    margin-bottom: rem(24);
+  }
+
   &__inner {
-		padding-block: rem(80);
+    padding-block: rem(80);
     display: flex;
 
     @include desktop-l {
@@ -25,21 +25,26 @@
   &--row {
     .section__inner {
       justify-content: space-between;
-			column-gap: rem(32);
+      column-gap: rem(32);
+
+			@include mobile {
+				flex-direction: column;
+				row-gap: rem(32);
+			}
     }
 
     .section__header {
       flex-direction: column;
-			row-gap: rem(40);
-			align-items: start;
+      row-gap: rem(40);
+      align-items: start;
 
-			@include desktop-l {
-				row-gap: rem(24);
-			}
+      @include desktop-l {
+        row-gap: rem(24);
+      }
 
-			@include tablet {
-				row-gap: rem(16);
-			}
+      @include tablet {
+        row-gap: rem(16);
+      }
     }
   }
 
@@ -51,35 +56,50 @@
       @include desktop-l {
         row-gap: rem(32);
       }
+
+      @include mobile {
+        row-gap: rem(24);
+      }
     }
 
     .section__header {
       justify-content: space-between;
-			column-gap: rem(32);
+      column-gap: rem(32);
       align-items: center;
+
+      @include mobile {
+        flex-direction: column;
+        align-items: start;
+				row-gap: rem(16);
+      }
     }
 
     .section__description {
       text-align: end;
+
+      @include mobile {
+        text-align: start;
+      }
     }
   }
 
-	&--center {
-		.section__header {
-			flex-direction: column;
-			text-align: center;
-			row-gap: rem(40);
+  &--center {
+    .section__header {
+      flex-direction: column;
+      text-align: center;
+      row-gap: rem(40);
+			align-items: center;
 
-			@include desktop-l {
-				row-gap: rem(24);
-			}
-		}
+      @include desktop-l {
+        row-gap: rem(24);
+      }
+    }
 
-		.section__description {
-			text-align: center;
-			max-width: rem(600);
-		}
-	}
+    .section__description {
+      text-align: center;
+      max-width: rem(600);
+    }
+  }
 
   &--red {
     background-color: var(--color-accent-red);
@@ -106,6 +126,10 @@
     }
 
     @include tablet {
+      margin-bottom: rem(14);
+    }
+
+    @include mobile {
       margin-bottom: rem(12);
     }
   }
@@ -126,10 +150,15 @@
       font-size: rem(40);
       max-width: rem(340);
     }
+
+    @include tablet {
+      font-size: rem(36);
+      max-width: rem(310);
+    }
   }
 
   &__description {
-		max-width: rem(620);
+    max-width: rem(620);
     font-size: rem(24);
 
     @include desktop-l {
@@ -141,5 +170,9 @@
       font-size: rem(18);
       max-width: rem(490);
     }
+
+		@include mobile {
+			max-width: 100%;
+		}
   }
 }

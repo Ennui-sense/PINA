@@ -14,4 +14,8 @@
 	@include tablet {
 		margin-top: rem(60);
 	}
+
+	@include mobile {
+		margin-top: rem(40);
+	}
 }

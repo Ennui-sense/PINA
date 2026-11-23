@@ -46,8 +46,9 @@
     }
 		
     @include tablet {
-			height: rem(250);
-			width: auto;
+			height: rem(200);
+			max-width: rem(320);
+			width: 100%;
 			margin-bottom: 0;
     }
 
@@ -107,7 +108,7 @@
     color: var(--color-accent-red-80);
 
 		@include tablet {
-			max-width: 100%;
+			max-width: 75%;
 		}
   }
 }

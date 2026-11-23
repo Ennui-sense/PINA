@@ -7,6 +7,10 @@
     @include desktop-l {
       max-width: rem(500);
     }
+
+    @include desktop-l {
+      max-width: rem(300)
+    }
   }
 
   &__image {
@@ -16,6 +20,10 @@
     height: 100%;
     width: calc(100vw / 2.5);
     object-fit: cover;
+
+		@include mobile {
+			width: calc(100vw / 2.2)
+		}
   }
 
   &__decoration {
@@ -38,6 +46,10 @@
 
       @include tablet {
         @include square(rem(70));
+      }
+
+      @include mobile {
+        @include square(rem(50));
       }
     }
 
@@ -65,6 +77,10 @@
     &--2 {
       left: 60vw;
       transform: translateX(-50%);
+			
+			@include mobile {
+				left: 55vw;
+			}
     }
 
     &--3 {

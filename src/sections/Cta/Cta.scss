@@ -1,8 +1,11 @@
 @use "~/styles/helpers" as *;
 
 .cta {
+	flex-shrink: 0;
+
 	&__inner {
-		position: relative;
+		display: flex;
+		justify-content: center;
 	}
 
 	&__image {
@@ -17,7 +20,11 @@
 
 		@include tablet {
 			margin-bottom: rem(-40);
-			width: rem(500);
+			width: rem(450);
+		}
+
+		@include mobile {
+
 		}
 	}
 }
