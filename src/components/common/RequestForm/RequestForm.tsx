@@ -16,11 +16,14 @@ import { formatMessage } from "~/lib/formatResult";
 
 type FieldErorrs = Partial<Record<keyof RequestFormValues, string>>;
 
-const RequestForm = () => {
+interface RequestFormProps {
+  onOpenModal: () => void;
+	setSuccess: (value: boolean) => void;
+}
+
+const RequestForm = ({ onOpenModal, setSuccess }: RequestFormProps) => {
   const [errors, setErrors] = useState<FieldErorrs>({});
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const [success, setSuccess] = useState<boolean>(false);
-  const [serverError, setServerError] = useState<string | null>(null);
 
   function clearFieldError(field: keyof RequestFormValues) {
     setErrors((prev) => ({
@@ -50,12 +53,10 @@ const RequestForm = () => {
 
       setErrors(newErrors);
       setSuccess(false);
-      setServerError(null);
       return;
     }
 
     setErrors({});
-    setServerError(null);
     setSuccess(false);
     setIsSubmitting(true);
 
@@ -78,9 +79,9 @@ const RequestForm = () => {
       setSuccess(true);
     } catch (err) {
       console.error(err);
-      setServerError("Не удалось отправить заявку. Попробуйте снова.");
     } finally {
       setIsSubmitting(false);
+			onOpenModal()
     }
   }
 
@@ -92,18 +93,19 @@ const RequestForm = () => {
             data={field}
             key={field.id}
             error={errors[field.id]}
-						onChange={() => clearFieldError(field.id)}
+            onChange={() => clearFieldError(field.id)}
           />
         ))}
       </div>
 
       <div className="request-form__sending">
-        <Button className="request-form__button" type="submit" disabled={isSubmitting}>
+        <Button
+          className="request-form__button"
+          type="submit"
+          disabled={isSubmitting}
+        >
           {isSubmitting ? "Отправляем..." : "Отправить"}
         </Button>
-
-        {serverError && <p className="request-form__error">{serverError}</p>}
-        {success && <p className="request-form__success">Ваша форма успешно была отправлена!</p>}
 
         <p className="request-form__text">
           * Отправляя форму, вы соглашаетесь на обработку персональных данных

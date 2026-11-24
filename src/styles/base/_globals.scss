@@ -1,5 +1,9 @@
 @use "./../helpers" as *;
 
+html:has(dialog[open]) {
+  background-color: rgba(0, 0, 0, 0.2)
+}
+
 body {
   font-family: var(--font-family-base);
   font-weight: 500;
@@ -7,7 +11,7 @@ body {
   line-height: 1.4;
   color: var(--color-accent-red);
   background-color: var(--color-light);
-	overflow-x: hidden;
+  overflow-x: hidden;
 
   @include desktop-l {
     font-size: rem(16);
@@ -29,13 +33,19 @@ svg * {
   transition-duration: var(--transition-duration);
 }
 
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
-	font-weight: 700;
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-weight: 700;
 }
 
 h2,

@@ -7,6 +7,7 @@ interface ButtonProps {
   children: string;
   type?: "button" | "submit";
   disabled?: boolean;
+	onClick?: () => void;
 }
 
 const Button = ({
@@ -14,12 +15,14 @@ const Button = ({
   children,
   type = "button",
   disabled = false,
+	onClick
 }: ButtonProps) => {
   return (
     <button
       type={type}
       className={clsx("button", className, disabled && "button--disabled")}
       disabled={disabled}
+			onClick={onClick}
     >
       {children}
     </button>

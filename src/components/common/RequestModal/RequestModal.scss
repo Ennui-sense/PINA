@@ -1,0 +1,65 @@
+@use "~/styles/helpers" as *;
+
+.request-modal {
+  border: none;
+  width: rem(400);
+  border-radius: var(--border-radius);
+  padding: rem(12) rem(12) rem(40);
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  &--success {
+    color: var(--color-success);
+
+    .request-modal__poster {
+      background-color: var(--color-success-light);
+    }
+
+    .request-modal__close-button {
+      & svg * {
+        fill: var(--color-success);
+      }
+    }
+  }
+
+  &--error {
+    color: var(--color-accent-red);
+
+    // overflow: ;
+
+    .request-modal__poster {
+      background-color: var(--color-accent-red-40);
+    }
+
+    .request-modal__close-button {
+      & svg * {
+        fill: var(--color-accent-red);
+      }
+    }
+  }
+
+  &__poster {
+    @include flex-center;
+
+    border-radius: var(--border-radius);
+    position: relative;
+    padding-block: rem(10);
+    margin-bottom: rem(20);
+  }
+
+  &__close-button {
+    @include square(rem(48));
+    @include button-reset;
+    @include flex-center(true);
+
+    position: absolute;
+    right: rem(12);
+    top: rem(12);
+  }
+
+  &__status {
+    margin-bottom: rem(8);
+  }
+}
