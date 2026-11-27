@@ -26,11 +26,20 @@
 		@include tablet {
 			gap: rem(12) rem(16)
 		}
+
+		@include mobile-s {
+			display: flex;
+			flex-direction: column;
+		}
   }
 
   &__button {
     align-self: start;
     margin-bottom: rem(20);
+
+		@include mobile-s {
+			width: 100%;
+		}
   }
 
   &__text {

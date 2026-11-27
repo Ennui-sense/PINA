@@ -11,14 +11,34 @@ import { useMediaQuery } from "~/hooks/useMediaQuery";
 
 const Hero = () => {
   const isTablet = useMediaQuery("tablet");
+  const isMobileSmall = useMediaQuery("mobile-s");
 
   return (
     <section className="hero">
-      <img src={manImageSrc} alt="Рисованное изображение мужчины бармена" width={1200} height={1200} className="hero__image hero__image--man" />
-      {!isTablet && <img src={handImageSrc} alt="Рисованное изображение руки с бокалом" width={400} height={400} className="hero__image hero__image--hand" />}
+      <img
+        src={manImageSrc}
+        alt="Рисованное изображение мужчины бармена"
+        width={1200}
+        height={1200}
+        className="hero__image hero__image--man"
+      />
+      {!isTablet && (
+        <img
+          src={handImageSrc}
+          alt="Рисованное изображение руки с бокалом"
+          width={400}
+          height={400}
+          className="hero__image hero__image--hand"
+        />
+      )}
 
       <div className="hero__inner container">
-        <Logo className="hero__logo" direction={isTablet ? "column" : "row"}/>
+        {!isMobileSmall && (
+          <Logo
+            className="hero__logo"
+            direction={isTablet ? "column" : "row"}
+          />
+        )}
 
         <Link className="hero__link" withArrow href="#section--request">
           Заказать

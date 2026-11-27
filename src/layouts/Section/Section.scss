@@ -3,6 +3,7 @@
 .section {
   border-radius: var(--border-radius-x-large);
   position: relative;
+	overflow: hidden;
   margin-bottom: rem(40);
 
   @include tablet {
@@ -20,6 +21,19 @@
     @include tablet {
       padding-block: rem(40);
     }
+
+    &:has(.about) {
+      padding-block: rem(80);
+    }
+
+    &:has(.cases) {
+      padding-inline: 0;
+      row-gap: rem(20) !important;
+
+      .section__header {
+        padding-inline: var(--container-padding-x);
+      }
+    }
   }
 
   &--row {
@@ -27,10 +41,10 @@
       justify-content: space-between;
       column-gap: rem(32);
 
-			@include mobile {
-				flex-direction: column;
-				row-gap: rem(32);
-			}
+      @include mobile {
+        flex-direction: column;
+        row-gap: rem(32);
+      }
     }
 
     .section__header {
@@ -58,7 +72,7 @@
       }
 
       @include mobile {
-        row-gap: rem(24);
+        row-gap: rem(40);
       }
     }
 
@@ -70,7 +84,7 @@
       @include mobile {
         flex-direction: column;
         align-items: start;
-				row-gap: rem(16);
+        row-gap: rem(16);
       }
     }
 
@@ -88,7 +102,7 @@
       flex-direction: column;
       text-align: center;
       row-gap: rem(40);
-			align-items: center;
+      align-items: center;
 
       @include desktop-l {
         row-gap: rem(24);
@@ -98,6 +112,10 @@
     .section__description {
       text-align: center;
       max-width: rem(600);
+
+			@include mobile-s {
+				max-width: 100%;
+			}
     }
   }
 
@@ -171,8 +189,20 @@
       max-width: rem(490);
     }
 
-		@include mobile {
-			max-width: 100%;
+    @include mobile {
+      max-width: 100%;
+    }
+
+		@include mobile-s {
+			font-size: rem(16);
 		}
+  }
+
+  &__link {
+    @include mobile-s {
+      width: 100%;
+      text-align: center;
+			margin-top: rem(24);
+    }
   }
 }

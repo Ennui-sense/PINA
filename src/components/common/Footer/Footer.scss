@@ -10,6 +10,10 @@
     padding-block: rem(48) rem(24);
   }
 
+  @include mobile-s {
+    padding-block: rem(40) rem(24);
+  }
+
   &__top {
     display: flex;
     justify-content: space-between;
@@ -23,6 +27,17 @@
     @include mobile {
       padding-bottom: rem(64);
     }
+
+    @include mobile-s {
+      flex-direction: column;
+			align-items: start;
+			row-gap: rem(24);
+			padding-bottom: rem(80);
+    }
+
+		.menu__list {
+			text-align: start;
+		}
   }
 
   &__image {
@@ -40,6 +55,12 @@
 
       @include mobile {
         width: 25%;
+      }
+
+      @include mobile {
+        width: 45%;
+				left: 100%;
+				transform: translateX(-100%);
       }
     }
 
@@ -68,6 +89,12 @@
     @include tablet {
       padding-top: rem(24);
     }
+
+		@include mobile-s {
+			flex-direction: column;
+			// row-gap: rem(12);
+			align-items: start;
+		}
   }
 
   &__text {
@@ -82,6 +109,10 @@
     @include mobile {
       font-size: rem(12);
     }
+
+		@include mobile-s {
+			font-size: rem(16);
+		}
   }
 
   &__info {
@@ -89,13 +120,17 @@
     column-gap: rem(40);
     align-items: center;
 
-		@include mobile {
-			column-gap: rem(32);
-		}
+    @include mobile {
+      column-gap: rem(32);
+    }
   }
 
   &__socials {
     position: relative;
+
+		@include mobile-s {
+			margin-top: auto;
+		}
 
     &::after {
       content: "";
@@ -107,8 +142,12 @@
       top: 50%;
       transform: translateY(-50%);
 
-			@include mobile {
-				right: rem(-16);
+      @include mobile {
+        right: rem(-16);
+      }
+
+			@include mobile-s {
+				display: none;
 			}
     }
   }
@@ -124,5 +163,9 @@
     @include mobile {
       font-size: rem(12);
     }
+
+		@include mobile-s {
+			font-size: rem(16);
+		}
   }
 }

@@ -30,6 +30,11 @@
 			padding-block: rem(24);
 		}
 
+		@include mobile {
+			font-size: rem(16);
+			column-gap: rem(20);
+		}
+
 		&::before {
 			@include square(rem(16));
 
@@ -37,6 +42,9 @@
 			background-color: var(--color-accent-red);
 			border-radius: 50%;
 
+			@include mobile {
+				@include square(rem(12))
+			}
 		}
 
 		&::after {

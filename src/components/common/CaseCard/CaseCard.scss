@@ -2,7 +2,7 @@
 
 .case-card {
   border-radius: var(--border-radius);
-  padding: rem(8) rem(8) rem(40);
+  padding: rem(12) rem(12) rem(40);
   box-shadow: var(--box-shadow);
   height: 100%;
 
@@ -13,8 +13,12 @@
   @include tablet {
     padding: rem(8);
   }
+
+	@include mobile-s {
+		padding-bottom: rem(40);
+	}
 	
-  @include hover {
+  @include hover(false) {
 		.case-card__image {
 			transform: scale(1.2);
     }
@@ -26,13 +30,18 @@
 			column-gap: rem(16);
 			align-items: center;
 		}
+
+		@include mobile-s {
+			flex-direction: column;
+			row-gap: rem(24);
+		}
 	}
 	
   &__media {
 		width: 100%;
     height: rem(300);
     margin-bottom: rem(28);
-    border-radius: var(--border-radius);
+    border-radius: rem(16);
     overflow: hidden;
 		position: relative;
 		
@@ -52,6 +61,12 @@
 			margin-bottom: 0;
     }
 
+		@include mobile-s {
+			width: 100%;
+			height: auto;
+			aspect-ratio: 1.5 / 1;
+		}
+
 		&::after {
 			@include square(rem(24));
 	
@@ -70,7 +85,7 @@
     height: 100%;
     overflow: hidden;
     object-fit: cover;
-    border-radius: var(--border-radius);
+    border-radius: inherit;
     transition-duration: var(--transition-duration);
   }
 

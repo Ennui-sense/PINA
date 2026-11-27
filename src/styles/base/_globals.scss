@@ -65,10 +65,6 @@ h3,
   @include desktop-l {
     font-size: rem(24);
   }
-
-  @include tablet {
-    font-size: rem(20);
-  }
 }
 
 :not(input, textarea):focus-visible {

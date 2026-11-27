@@ -1,30 +1,26 @@
 @use "~/styles/helpers" as *;
 
 .cta {
-	flex-shrink: 0;
+  flex-shrink: 0;
 
-	&__inner {
-		display: flex;
-		justify-content: center;
-	}
+  &__inner {
+    display: flex;
+    justify-content: center;
+  }
 
-	&__image {
-		width: rem(750);
-		height: auto;
-		margin-bottom: rem(-80);
+  &__image {
+    width: rem(750);
+    height: auto;
+    margin-bottom: rem(-80);
 
-		@include desktop-l {
-			margin-bottom: rem(-60);
-			width: rem(600);
-		}
+    @include desktop-l {
+      margin-bottom: rem(-60);
+      width: rem(600);
+    }
 
-		@include tablet {
-			margin-bottom: rem(-40);
-			width: rem(450);
-		}
-
-		@include mobile {
-
-		}
-	}
+    @include tablet {
+      margin-bottom: rem(-40);
+      width: rem(450);
+    }
+  }
 }

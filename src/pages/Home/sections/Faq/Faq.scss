@@ -1,6 +1,6 @@
 @use "~/styles/helpers" as *;
 
-.approach {
+.faq {
 	&__list {
 		display: flex;
 		flex-direction: column;
@@ -24,6 +24,7 @@
 
 		@include mobile {
 			max-width: 100%;
+			padding-right: 0;
 		}
 
 		&::after {
@@ -77,6 +78,13 @@
 			top: 0;
 			left: 70%;
 			width: 20%;
+		}
+
+		@include mobile-s {
+			transform: rotate(-90deg) translateY(-75%);
+			left: 100%;
+			top: rem(40);
+			width: 25%;
 		}
 	}
 }

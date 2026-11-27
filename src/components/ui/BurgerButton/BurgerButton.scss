@@ -1,0 +1,9 @@
+@use "~/styles/helpers" as *;
+
+.burger-button {
+	@include button-reset;
+	@include flex-center(true);
+	@include square(rem(32));
+
+	background-color: transparent;
+}

@@ -1,35 +1,66 @@
 @use "~/styles/helpers" as *;
 
 .cases {
-	&__inner {
-		display: flex;
-		flex-direction: column;
-		row-gap: rem(80);
-		align-items: center;
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(80);
+    align-items: center;
 
-		@include desktop-l {
-			row-gap: rem(48);
-		}	
+    @include desktop-l {
+      row-gap: rem(48);
+    }
 
-		@include tablet {
-			row-gap: rem(32);
-		}	
-	}
+    @include tablet {
+      row-gap: rem(32);
+    }
 
-	&__list {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		column-gap: rem(40);
+    @include mobile-s {
+      flex-direction: column;
+    }
+  }
 
-		@include desktop {
-			column-gap: rem(32);
-		}
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: rem(40);
 
-		@include tablet {
-			display: flex;
-			flex-direction: column;
-			row-gap: rem(28);
-			width: 100%;
-		}
-	}
+    @include desktop {
+      column-gap: rem(32);
+    }
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(28);
+      width: 100%;
+    }
+  }
+
+  &__slider {
+    width: 100%;
+
+    .swiper-wrapper {
+      padding-block: rem(20);
+    }
+  }
+
+  &__pagination {
+    display: flex;
+		justify-content: center;
+    column-gap: rem(8);
+
+    &-button {
+      @include square(rem(12));
+			@include button-reset;
+			@include flex-center(true);
+
+      border-radius: 50%;
+      background-color: var(--color-accent-red-40);
+
+      &--active {
+        background-color: var(--color-accent-red);
+      }
+    }
+  }
 }

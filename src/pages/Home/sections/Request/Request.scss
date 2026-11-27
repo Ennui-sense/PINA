@@ -26,6 +26,10 @@
     @include tablet {
       padding: rem(32);
     }
+
+		@include mobile-s {
+			padding-block: rem(40);
+		}
   }
 
   &__title {

@@ -16,13 +16,13 @@
     text-transform: uppercase;
     margin-bottom: rem(12);
 
-		@include desktop-l {
-			font-size: rem(14);
-		}
+    @include desktop-l {
+      font-size: rem(14);
+    }
 
-		@include tablet {
-			margin-bottom: rem(8);
-		}
+    @include tablet {
+      margin-bottom: rem(8);
+    }
   }
 
   &__input {
@@ -33,16 +33,15 @@
     border: none;
     font-weight: 400;
     font-size: rem(16);
-    margin-bottom: rem(8);
     font-weight: 500;
     color: var(--color-accent-red);
 
-		@include tablet {
-			font-size: rem(14);
-		}
+    @include tablet {
+      font-size: rem(14);
+    }
 
     @include hover(false) {
-      outline-width: rem(2)
+      outline-width: rem(2);
     }
 
     &:focus {
@@ -70,6 +69,11 @@
     font-size: rem(16);
     font-weight: 400;
     color: var(--color-error);
+    margin-top: rem(8);
     text-decoration: underline;
+
+		@include mobile-s {
+			font-size: rem(14);
+		}
   }
 }

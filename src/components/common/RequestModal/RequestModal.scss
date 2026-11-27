@@ -2,7 +2,7 @@
 
 .request-modal {
   border: none;
-  width: rem(400);
+  width: rem(480);
   border-radius: var(--border-radius);
   padding: rem(12) rem(12) rem(40);
 
@@ -26,8 +26,6 @@
 
   &--error {
     color: var(--color-accent-red);
-
-    // overflow: ;
 
     .request-modal__poster {
       background-color: var(--color-accent-red-40);
@@ -57,6 +55,14 @@
     position: absolute;
     right: rem(12);
     top: rem(12);
+
+		@include hover(false) {
+			transform: rotate(10deg);
+		}
+
+		&:active {
+			opacity: 0.6;
+		}
   }
 
   &__status {

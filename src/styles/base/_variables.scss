@@ -40,4 +40,8 @@
     --button-height: #{rem(48)};
     --container-width: #{rem(1340)};
   }
+
+  @include mobile-s {
+    --button-height: #{rem(40)};
+  }
 }
