@@ -13,7 +13,8 @@ const CaseCard = ({ data }: CaseCarsProps) => {
     <article className="case-card">
       <div className="case-card__inner">
         <div className="case-card__media">
-          <img src={imageSrc} alt="" className="case-card__image" />
+          <img src={imageSrc} alt="" className="case-card__image"
+            width={472} height={300} loading="lazy" decoding="async" />
         </div>
 
         <div className="case-card__body">

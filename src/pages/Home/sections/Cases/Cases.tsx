@@ -1,5 +1,5 @@
 import "./Cases.scss";
-import "swiper/css";
+import { lazy, Suspense } from "react";
 
 import Section from "~/layouts/Section/Section";
 
@@ -8,8 +8,7 @@ import CaseCard from "~/components/common/CaseCard/CaseCard";
 
 import { CASES } from "~/data";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+const CasesSlider = lazy(() => import("./CasesSlider"));
 
 import { useMediaQuery } from "~/hooks/useMediaQuery";
 
@@ -25,32 +24,19 @@ const Cases = () => {
     >
       <div className="cases__inner">
         {isMobileSmall ? (
-          <div className="cases__slider">
-            <Swiper
-              modules={[Pagination]}
-              slidesPerView={1.15}
-              className="cases__swiper"
-              spaceBetween={8}
-              centeredSlides
-              pagination={{
-                el: ".cases__pagination",
-                type: "bullets",
-                clickable: true,
-                bulletClass: "cases__pagination-button",
-                bulletActiveClass: "cases__pagination-button--active",
-                renderBullet: (index, className) =>
-                  `<button class="${className}" type="button" aria-label="Перейти к слайду ${index + 1}"></button>`,
-              }}
-            >
-              {CASES.map((caseData) => (
-                <SwiperSlide className="cases__slide" key={caseData.id}>
-                  <CaseCard data={caseData} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-
-            <div className="cases__pagination"></div>
-          </div>
+          <Suspense fallback={
+            <div className="cases__slider cases__slider-fallback">
+              <div className="cases__slider-preview">
+                {CASES.map((caseData) => <CaseCard key={caseData.id} data={caseData} />)}
+              </div>
+              <div className="cases__pagination" aria-hidden="true">
+                {CASES.map((item, index) => <span key={item.id}
+                  className={`cases__pagination-button${index === 0 ? " cases__pagination-button--active" : ""}`} />)}
+              </div>
+            </div>
+          }>
+            <CasesSlider />
+          </Suspense>
         ) : (
           <ul className="cases__list">
             {CASES.map((caseData) => (

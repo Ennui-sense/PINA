@@ -1,0 +1,28 @@
+// Keep offscreen sections in the document and keyboard navigation, while
+// letting the browser postpone their layout, painting and font requests.
+.hero ~ .section {
+  content-visibility: auto;
+  contain-intrinsic-block-size: auto 650px;
+
+  &:target,
+  &:has(dialog[open]) {
+    content-visibility: visible;
+  }
+}
+
+main:has(> .hero) + .footer {
+  content-visibility: auto;
+  contain-intrinsic-block-size: auto 450px;
+}
+
+// Resolve all preceding heights before the browser starts an anchor scroll.
+main:has(> .section:target) > .section {
+  content-visibility: visible;
+}
+
+@media (max-width: 29.99875rem) {
+  #section--faq,
+  #section--request {
+    contain-intrinsic-block-size: auto 1000px;
+  }
+}

@@ -2,7 +2,8 @@ import "./Cta.scss";
 
 import Section from "~/layouts/Section/Section";
 
-import womanImageSrc from "~/assets/images/woman.svg";
+import womanImageSrc from "~/assets/images/optimized/woman-756.webp";
+import womanLargeSrc from "~/assets/images/optimized/woman-1512.webp";
 
 const Cta = () => {
   return (
@@ -18,11 +19,14 @@ const Cta = () => {
       <div className="cta__inner">
         <img
           src={womanImageSrc}
+          srcSet={`${womanImageSrc} 756w, ${womanLargeSrc} 1512w`}
+          sizes="(max-width: 29.99875rem) 100vw, (max-width: 63.99875rem) 450px, (max-width: 119.99875rem) 600px, 750px"
           alt="Нарисованная женщина сидит и пьет коктейль"
           className="cta__image"
-          width={750}
-          height={500}
+          width={756}
+          height={494}
           loading="lazy"
+          decoding="async"
         />
       </div>
     </Section>

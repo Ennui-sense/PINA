@@ -31,3 +31,10 @@ export const requestSchema = z.object({
 });
 
 export type RequestFormValues = z.infer<typeof requestSchema>;
+
+export const validateRequest = (values: unknown) => {
+  const result = requestSchema.safeParse(values);
+  return result.success
+    ? { success: true as const, data: result.data }
+    : { success: false as const, errors: z.flattenError(result.error).fieldErrors };
+};

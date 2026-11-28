@@ -47,20 +47,49 @@
 
   &__pagination {
     display: flex;
-		justify-content: center;
+    justify-content: center;
     column-gap: rem(8);
 
     &-button {
-      @include square(rem(12));
-			@include button-reset;
-			@include flex-center(true);
+      @include square(rem(32));
+      @include button-reset;
+      @include flex-center(true);
 
       border-radius: 50%;
-      background-color: var(--color-accent-red-40);
+      background-color: transparent;
 
-      &--active {
+      &::before {
+        content: "";
+        @include square(rem(12));
+        border-radius: 50%;
+        background-color: var(--color-accent-red-40);
+      }
+
+      &--active::before {
         background-color: var(--color-accent-red);
       }
+    }
+  }
+
+  // Match Swiper's initial geometry while its optional mobile chunk loads.
+  &__slider-fallback {
+    overflow: hidden;
+  }
+
+  &__slider-preview {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - 1.2px) / 1.15);
+    gap: rem(8);
+    padding-block: rem(20);
+    transform: translateX(calc((100% - (100% - 1.2px) / 1.15) / 2));
+  }
+
+  &__link {
+    @include mobile-s {
+      width: 100%;
+			text-align: center;
+			padding-inline: var(--container-padding-x);
     }
   }
 }

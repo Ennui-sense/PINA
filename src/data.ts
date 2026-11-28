@@ -10,9 +10,9 @@ import type {
 import VkIcon from "~/assets/icons/vk.svg?react";
 import TelegramIcon from "~/assets/icons/telegram.svg?react";
 
-import firstCaseImageSrc from "~/assets/images/cases/1.jpg";
-import secondCaseImageSrc from "~/assets/images/cases/2.jpg";
-import thirdCaseImageSrc from "~/assets/images/cases/3.jpg";
+import firstCaseImageSrc from "~/assets/images/optimized/cases-1.webp";
+import secondCaseImageSrc from "~/assets/images/optimized/cases-2.webp";
+import thirdCaseImageSrc from "~/assets/images/optimized/cases-3.webp";
 
 import { PHONE_MASK_OPTIONS } from "./constants";
 
@@ -39,11 +39,13 @@ export const SOCIALS: SocialsItem[] = [
   {
     id: 1,
     Icon: VkIcon,
+    label: "ВКонтакте",
     href: "/",
   },
   {
     id: 2,
     Icon: TelegramIcon,
+    label: "Telegram",
     href: "/",
   },
 ];

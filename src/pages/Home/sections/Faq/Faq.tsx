@@ -4,7 +4,7 @@ import Section from "~/layouts/Section/Section";
 
 import { APPROACH_ITEMS } from "~/data";
 
-import starImageSrc from "~/assets/images/star.svg";
+import starImageSrc from "~/assets/images/optimized/star-840.webp";
 
 const Faq = () => {
   return (
@@ -34,6 +34,7 @@ const Faq = () => {
         width={420}
         height={460}
         loading="lazy"
+        decoding="async"
       />
     </Section>
   );

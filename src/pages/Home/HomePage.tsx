@@ -1,3 +1,4 @@
+import "./HomePage.scss";
 import MainLayout from "~/layouts/MainLayout/MainLayout";
 
 import Hero from "./sections/Hero/Hero";

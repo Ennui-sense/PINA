@@ -1,0 +1,21 @@
+@use "~/styles/helpers" as *;
+
+.cross-button {
+  @include square(rem(48));
+  @include button-reset;
+  @include flex-center(true);
+
+  position: absolute;
+
+  @include hover(false) {
+    transform: rotate(10deg);
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+	@include mobile-s {
+		@include square(rem(24));
+	}
+}

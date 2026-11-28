@@ -16,12 +16,6 @@
     .request-modal__poster {
       background-color: var(--color-success-light);
     }
-
-    .request-modal__close-button {
-      & svg * {
-        fill: var(--color-success);
-      }
-    }
   }
 
   &--error {
@@ -29,12 +23,6 @@
 
     .request-modal__poster {
       background-color: var(--color-accent-red-40);
-    }
-
-    .request-modal__close-button {
-      & svg * {
-        fill: var(--color-accent-red);
-      }
     }
   }
 
@@ -47,25 +35,12 @@
     margin-bottom: rem(20);
   }
 
-  &__close-button {
-    @include square(rem(48));
-    @include button-reset;
-    @include flex-center(true);
-
-    position: absolute;
-    right: rem(12);
-    top: rem(12);
-
-		@include hover(false) {
-			transform: rotate(10deg);
-		}
-
-		&:active {
-			opacity: 0.6;
-		}
-  }
-
   &__status {
+    text-transform: none;
     margin-bottom: rem(8);
   }
+
+	&__close-button {
+		color: inherit;
+	}
 }

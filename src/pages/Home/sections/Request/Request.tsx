@@ -6,46 +6,14 @@ import RequestForm from "~/components/common/RequestForm/RequestForm";
 import RequestModal from "~/components/common/RequestModal/RequestModal";
 
 import { useMediaQuery } from "~/hooks/useMediaQuery";
-import { useRef, useState, useEffect } from "react";
+import { useState } from "react";
+import { useDialog } from "~/hooks/useDialog";
 
 const Request = () => {
   const [success, setSuccess] = useState<boolean>(false);
-  const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 
-  const modalRef = useRef<HTMLDialogElement>(null);
+  const { dialogRef, openDialog, closeDialog } = useDialog();
   const isTablet = useMediaQuery("tablet");
-
-  useEffect(() => {
-    document.body.style.overflow = isOpenModal ? "hidden" : "";
-
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpenModal]);
-
-  useEffect(() => {
-    if (!isOpenModal) return;
-
-    const scrollbarWidth =
-      window.innerWidth - document.documentElement.clientWidth;
-
-    document.body.style.overflow = "hidden";
-    document.body.style.paddingRight = `${scrollbarWidth}px`;
-
-    return () => {
-      document.body.style.overflow = "";
-      document.body.style.paddingRight = "";
-    };
-  }, [isOpenModal]);
-
-  const handleClose = () => {
-    modalRef.current?.close();
-  };
-
-  const handleOpen = () => {
-    modalRef.current?.showModal();
-    setIsOpenModal(true);
-  };
 
   return (
     <Section
@@ -59,14 +27,13 @@ const Request = () => {
         <p className="request__title h3">Заявка на выездной бар</p>
         <p className="request__description">Поля со звёздочкой обязательны</p>
 
-        <RequestForm onOpenModal={handleOpen} setSuccess={setSuccess} />
+        <RequestForm onOpenModal={openDialog} setSuccess={setSuccess} />
       </div>
 
       <RequestModal
-        ref={modalRef}
-        onClose={handleClose}
+        ref={dialogRef}
+        onClose={closeDialog}
         isSuccess={success}
-        setIsOpenModal={setIsOpenModal}
       />
     </Section>
   );

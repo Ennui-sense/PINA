@@ -8,6 +8,7 @@ export type MenuItem = {
 
 export type SocialsItem = {
   id: number;
+  label: string;
   Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   href: string;
 };

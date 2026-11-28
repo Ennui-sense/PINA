@@ -9,9 +9,9 @@ interface SocialsProps {
 const Socials = ({ className }: SocialsProps) => {
   return (
     <div className={clsx("socials", className)}>
-      {SOCIALS.map(({ Icon, id, href }) => (
-        <a href={href} className="socials__link" key={id}>
-          <Icon />
+      {SOCIALS.map(({ Icon, id, href, label }) => (
+        <a href={href} className="socials__link" key={id} aria-label={label}>
+          <Icon aria-hidden="true" focusable="false" />
         </a>
       ))}
     </div>

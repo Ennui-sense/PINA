@@ -1,7 +1,7 @@
 import "./About.scss";
 
 import Section from "~/layouts/Section/Section";
-import AboutImage from "~/assets/images/about.jpg";
+import AboutImage from "~/assets/images/optimized/about.webp";
 
 const About = () => {
   return (
@@ -29,6 +29,7 @@ const About = () => {
             width={763}
             height={524}
             loading="lazy"
+            decoding="async"
           />
           <div className="about__decoration about__decoration--3"></div>
         </div>

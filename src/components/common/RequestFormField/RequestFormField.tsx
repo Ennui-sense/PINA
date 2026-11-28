@@ -30,6 +30,9 @@ const RequestFormField = ({ data, error, onChange }: RequestFormFieldProps) => {
     name: id,
     placeholder,
     onChange,
+    "aria-required": required || undefined,
+    "aria-invalid": !!error,
+    "aria-describedby": error ? `${id}-error` : undefined,
   };
 
   return (
@@ -63,7 +66,7 @@ const RequestFormField = ({ data, error, onChange }: RequestFormFieldProps) => {
         />
       )}
 
-      {error && <p className="request-form-field__error">{error}</p>}
+      {error && <p id={`${id}-error`} className="request-form-field__error">{error}</p>}
     </div>
   );
 };

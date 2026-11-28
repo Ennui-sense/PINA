@@ -4,8 +4,8 @@ import Logo from "../Logo/Logo";
 import Menu from "~/components/ui/Menu/Menu";
 import Socials from "~/components/ui/Socials/Socials";
 
-import bottlesImageSrc from "~/assets/images/bottles.svg";
-import glassImageSrc from "~/assets/images/glass.svg";
+import bottlesImageSrc from "~/assets/images/optimized/bottles-754.webp";
+import glassImageSrc from "~/assets/images/optimized/glass-400.webp";
 
 import { useMediaQuery } from "~/hooks/useMediaQuery";
 
@@ -29,9 +29,10 @@ const Footer = () => {
             src={bottlesImageSrc}
             alt=""
             className="footer__image footer__image--bottles"
-            width={370}
-            height={250}
+            width={377}
+            height={252}
             loading="lazy"
+            decoding="async"
           />
           {!isMobileSmall && (
             <img
@@ -41,6 +42,7 @@ const Footer = () => {
               width={150}
               height={150}
               loading="lazy"
+              decoding="async"
             />
           )}
         </div>

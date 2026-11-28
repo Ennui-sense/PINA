@@ -68,7 +68,12 @@ h3,
 }
 
 :not(input, textarea):focus-visible {
-  outline: rem(2) dashed red;
+  outline: rem(2) solid var(--color-accent-red);
   outline-offset: rem(4);
-  transition-duration: 0s !important;
+}
+
+// These two states are programmatic focus, not keyboard navigation.
+[data-dialog-initial-focus]:focus,
+[data-dialog-return-focus]:focus {
+  outline: none;
 }
